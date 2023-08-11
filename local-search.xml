@@ -4,11 +4,24 @@
   
   
   <entry>
+    <title>post</title>
+    <link href="/2023/08/11/MySQL/MySQL45%E8%AE%B2/MySQL%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/"/>
+    <url>/2023/08/11/MySQL/MySQL45%E8%AE%B2/MySQL%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>MySQL日志</title>
     <link href="/2023/08/11/MySQL/MySQL45%E8%AE%B2/MySQL%E6%97%A5%E5%BF%97/"/>
     <url>/2023/08/11/MySQL/MySQL45%E8%AE%B2/MySQL%E6%97%A5%E5%BF%97/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="MySQL日志系统"><a href="#MySQL日志系统" class="headerlink" title="MySQL日志系统"></a>MySQL日志系统</h1>]]></content>
     
     
     
@@ -84,31 +97,6 @@
     <tags>
       
       <tag>Java并发编程</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>线程池执行流程和队列选择</title>
-    <link href="/2023/07/15/MySQL/MySQL45%E8%AE%B2/MySQL%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/"/>
-    <url>/2023/07/15/MySQL/MySQL45%E8%AE%B2/MySQL%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    <categories>
-      
-      <category>日常笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>MysQL</tag>
       
     </tags>
     
