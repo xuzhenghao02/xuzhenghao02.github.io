@@ -16,26 +16,19 @@
   <meta name="author" content="xuzhenghao">
   <meta name="keywords" content="">
   
-    <meta name="description" content="线程池执行流程和队列选择线程池ThreadPoolExecutor的参数12345public ThreadPoolExecutor(int corePoolSize,                          int maximumPoolSize,                          long keepAliveTime,">
-<meta property="og:type" content="article">
-<meta property="og:title" content="线程池执行流程和队列选择">
-<meta property="og:url" content="http://example.com/[object%20Object]/2023/07/Java%E5%B9%B6%E5%8F%91-%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%E5%92%8C%E9%98%9F%E5%88%97%E9%80%89%E6%8B%A9/index.html">
+    <meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/08/MySQL-MySQL45%E8%AE%B2-01-%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="线程池执行流程和队列选择线程池ThreadPoolExecutor的参数12345public ThreadPoolExecutor(int corePoolSize,                          int maximumPoolSize,                          long keepAliveTime,">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/dailyrecord/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
-<meta property="og:image" content="http://example.com/images/dailyrecord/execute%E6%BA%90%E7%A0%81.png">
-<meta property="og:image" content="http://example.com/images/dailyrecord/addWorker%E6%BA%90%E7%A0%81.png">
-<meta property="article:published_time" content="2023-07-15T15:07:16.000Z">
-<meta property="article:modified_time" content="2023-07-22T12:47:21.920Z">
+<meta property="article:published_time" content="2023-08-11T14:59:35.073Z">
+<meta property="article:modified_time" content="2023-08-11T14:59:35.073Z">
 <meta property="article:author" content="xuzhenghao">
-<meta property="article:tag" content="Java并发编程">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/images/dailyrecord/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
   
   
   
-  <title>线程池执行流程和队列选择 - Hexo</title>
+  <title>Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -201,7 +194,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="线程池执行流程和队列选择"></span>
+            <span id="subtitle" data-typed-text=""></span>
           
         </div>
 
@@ -212,8 +205,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-07-15 23:07" pubdate>
-          July 15, 2023 pm
+        <time datetime="2023-08-11 22:59" pubdate>
+          August 11, 2023 pm
         </time>
       </span>
     
@@ -224,7 +217,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3k words
+          0 words
         
       </span>
     
@@ -235,7 +228,7 @@
         
         
         
-          26 mins
+          1 mins
         
       </span>
     
@@ -272,57 +265,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">线程池执行流程和队列选择</h1>
+            <h1 id="seo-header"></h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="线程池执行流程和队列选择"><a href="#线程池执行流程和队列选择" class="headerlink" title="线程池执行流程和队列选择"></a>线程池执行流程和队列选择</h1><h2 id="线程池ThreadPoolExecutor的参数"><a href="#线程池ThreadPoolExecutor的参数" class="headerlink" title="线程池ThreadPoolExecutor的参数"></a>线程池ThreadPoolExecutor的参数</h2><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">ThreadPoolExecutor</span><span class="hljs-params">(<span class="hljs-type">int</span> corePoolSize,</span></span><br><span class="hljs-params"><span class="hljs-function">                          <span class="hljs-type">int</span> maximumPoolSize,</span></span><br><span class="hljs-params"><span class="hljs-function">                          <span class="hljs-type">long</span> keepAliveTime,</span></span><br><span class="hljs-params"><span class="hljs-function">                          TimeUnit unit,</span></span><br><span class="hljs-params"><span class="hljs-function">                          BlockingQueue&lt;Runnable&gt; workQueue)</span></span>; <br></code></pre></td></tr></table></figure>
-
-<ul>
-<li>corePoolSize<br>核心线程大小。在创建了线程池后，默认情况下，线程池中并没有任何线程，而是等待有任务到来才创建线程去执行任务，除非调用了 prestartAllCoreThreads() 或者 prestartCoreThread() 方法，这两个方法是用来预创建线程，即在没有任务到来之前就创建 corePoolSize 个线程或者一个线程。<strong>默认情况下，在创建了线程池后，线程池中的线程数为0，当有任务来之后，就会创建一个线程去执行任务，当线程池中的线程数目达到 corePoolSize 后，就会把到达的任务放到缓存队列当中。</strong></li>
-<li>maximumPoolSize<br>线程池最大线程数，表示线程池最多能创建多少线程</li>
-<li>keepAliveTime<br>表示线程没有任务执行时最多保持多久时间会终止。默认情况下，只有当线程池中的线程数大于 corePoolSize 时，keepAliveTime 才会起作用，直到线程池中的线程数不大于 corePoolSize，即当线程池中的线程数大于 corePoolSize 时，如果一个线程空闲的时间达到 keepAliveTime，则会终止，直到线程池中的线程数不超过 corePoolSize。</li>
-<li>unit<br>参数 keepAliveTime 的时间单位</li>
-<li>workQueue<br>一个阻塞队列，用来存储等待执行的任务。一般阻塞队列有以下几种选择：ArrayBlockingQueue、LinkedBlockingQueue、SynchronousQueue和PriorityBlockingQueue。其余的还有DelayQueue、LinkedTransferQueue和LinkedBlockingDeque。<ul>
-<li>ArrayBlockingQueue(int i)：规定大小的BlockingQueue，其构造必须指定大小，根据FIFO原则进行排序</li>
-<li>LinkedBlockingQueue()或者(int i)：大小不固定的BlockingQueue。如果指定大小，生成的BlockingQueue有大小限制；如果不指定大小，其大小由Integer.MAX_VALUE决定。顺序为FIFO。</li>
-<li>PriorityBlockingQueue()或者(int i)：类似于LinkedBlockingQueue，但是其所含对象的排序不是FIFO，而是根据对象的自然顺序或者其构造函数的Comparator决定</li>
-<li>SynchronousQueue()：特殊的BlockingQueue，不存储元素的阻塞队列，每一个put操作必须等待take操作，否则不能添加元素。支持公平锁和非公平锁。Executors.newCachedThreadPool()就使用了SynchronousQueue，这个线程池根据需要创建新的线程，如果有空闲的线程就会重复使用。</li>
-<li>DelayQueue：一个实现延迟获取的无界队列，在创建元素时，可以指定多久才能从队列中获取当前元素，只有期满之后才能从队列中获取元素。</li>
-<li>LinkedTransferQueue：一个由链表结构组成的无界阻塞队列。LinkedTransferQueue可以算是 LinkedBolckingQueue 和 SynchronousQueue 的合体。SynchronousQueue 内部无法存储元素，当要添加元素的时候，需要阻塞。LinkedBolckingQueue 则内部使用了大量的锁，性能有所下降。相对于其他阻塞队列，LinkedTransferQueue多了 tryTransfer(E e)和transfer(E e) 方法。</li>
-<li>LinkedBlockingDeque：一个由链表结构组成的双向阻塞队列。队列头部和尾部都可以添加和移除元素，多线程并发时，可以将锁的竞争降到最多一半。</li>
-</ul>
-</li>
-<li>threadFactory<br>线程工厂，用于创建线程</li>
-<li>handler<br>表示拒绝处理任务时的策略，有以下几种取值：<ul>
-<li>ThreadPoolExecutor.AbortPolicy：丢弃任务并抛出 RejectedExecutionException 异常</li>
-<li>ThreadPoolExecutor.DiscardPolicy：也是丢弃任务，但是不抛出异常</li>
-<li>ThreadPoolExecutor.DiscardOldestPolicy：丢弃队列最前面的任务，然后重新尝试执行任务（重复此过程）</li>
-<li>ThreadPoolExecutor.CallerRunsPolicy：由调用线程处理该任务，即这个任务并不是由线程池中的线程来执行，而是由主线程来执行</li>
-</ul>
-</li>
-</ul>
-<h2 id="任务创建、获取并执行的流程"><a href="#任务创建、获取并执行的流程" class="headerlink" title="任务创建、获取并执行的流程"></a>任务创建、获取并执行的流程</h2><p><img src="/../images/dailyrecord/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%E5%9B%BE.png" srcset="/img/loading.gif" lazyload alt="img"><br>主要分为以下几个步骤：</p>
-<ol>
-<li>如果线程数小于coreSize，则创建核心线程addWorker(command, true)</li>
-<li>如果coreSize已满，则任务进入队列中。</li>
-<li>入队成功，则在队列中等待；入队失败，则尝试创建非核心线程执行command，addWorker(command, false)</li>
-<li>第3步的addWorker创建取决于当前线程数是否大于等于maximumPoolSize。如果超过，创建失败，拒绝执行任务；如果成功，则创建线程执行</li>
-</ol>
-<p><strong>ThreadPoolExecutor#execute(Runnable command)源码：</strong><br><img src="/../images/dailyrecord/execute%E6%BA%90%E7%A0%81.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<p><strong>ThreadPoolExecutor#addWorker源码：</strong><br><img src="/../images/dailyrecord/addWorker%E6%BA%90%E7%A0%81.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<h2 id="不同的队列配置对业务的影响"><a href="#不同的队列配置对业务的影响" class="headerlink" title="不同的队列配置对业务的影响"></a>不同的队列配置对业务的影响</h2><ul>
-<li>对于业务来说，最重要的是及时处理用户的请求，所以线程池中的队列大多选择不进行配置</li>
-<li>如果要对线程池进行配置，那么尽可能使用SynchronousQueue队列。SynchronousQueue队列中，新任务加入时会被阻塞，直到有线程领取任务后才会结束阻塞状态，每次领取任务的数量取决于空闲线程的数量，即空闲线程有多少，就可以接受多少任务；而LinkedBlockingQueue和ArrayBlockingQueue队列每次<strong>只能允许一个任务加入</strong></li>
-<li>如果使用LinkedBlockingQueue和ArrayBlockingQueue队列，队列的数量不能设置太小，否则就会出现大量线程空闲但是新任务被直接拒绝的情况。<ul>
-<li>原因如下：接收任务的流量很大且处理任务很快，这时候队列接收和领取任务的频率变得很快，但是队列由于采用CAS机制来接收和领取任务，速率很慢。一旦队列设置过小且线程来不及处理原来的任务，很容易让队列容量达到上限。这个时候，根据流程图所示，外部任务会尝试创建新线程来解决任务。而如果线程以达到最大数量时，则会将新任务直接丢弃。</li>
-<li>这样的话，最后的结果就是由于队列容量很小，线程池只有部分线程可以领取到任务，大多数线程空闲；而新加入的任务由于队列已满以及达到最大线程数而被直接丢弃。本质上来说，这个问题就是业务方面要求线程池内的队列线程流通量足够，但是LinkedBlockingQueue和ArrayBlockingQueue无法满足要求。</li>
-</ul>
-</li>
-<li>SynchronousQueue队列则不会出现这个问题，当前时刻有多少空闲的消费者，则线程池就可以接收多少个任务，这可以保证足够的线程池流通性</li>
-</ul>
-
+                
                 
               </div>
             
@@ -330,34 +278,6 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E6%97%A5%E5%B8%B8%E7%AC%94%E8%AE%B0/" class="category-chain-item">日常笔记</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="print-no-link">#Java并发编程</a>
-      
-    </div>
   
 </div>
 
@@ -367,8 +287,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>线程池执行流程和队列选择</div>
-      <div>http://example.com/[object Object]/2023/07/Java并发-线程池执行流程和队列选择/</div>
+      <div></div>
+      <div>http://example.com/2023/08/MySQL-MySQL45讲-01-基础架构/</div>
     </div>
     <div class="license-meta">
       
@@ -380,7 +300,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>July 15, 2023</div>
+          <div>August 11, 2023</div>
         </div>
       
       
@@ -412,15 +332,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/%5Bobject%20Object%5D/2023/07/Java%E5%B9%B6%E5%8F%91-Java-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%AD%90%E6%80%A7%E3%80%81%E5%8F%AF%E8%A7%81%E6%80%A7%E3%80%81%E6%9C%89%E5%BA%8F%E6%80%A7/" title="Java 内存模型和原子性、可见性、有序性">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Java 内存模型和原子性、可见性、有序性</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2023/07/Java%E5%B9%B6%E5%8F%91-Java%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/" title="Java线程池实现原理">
+                        <span class="hidden-mobile">Java线程池实现原理</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
