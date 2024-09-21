@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		大白话讲DDD概念 | 
+	 
+	Hexo
+	</title>
+	
+	<!-- keywords,description -->
+	
+	
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "wujun234.com";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js"></script>
+
+	
+	
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+	<header id="header">
+    <a id="title" href="/" class="logo">Hexo</a>
+
+	<ul id="menu">
+    
+
+    
+
+    
+
+    
+      
+      
+        <li class="menu-item">
+          <a href='https://github.com/wujun234/hexo-theme-tree' class="menu-item-link" target="_blank">
+            Tree
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a href='https://github.com/wujun234/uid-generator-spring-boot-starter' class="menu-item-link" target="_blank">
+            UidGenerator
+          </a>
+        </li>
+      
+    
+  
+    
+      <li class="menu-item">
+        <a href='https://github.com/wujun234' class="menu-item-link" target="_blank">
+          <i class="fa fa-github fa-2x"></i>
+        </a>
+      </li>
+    
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="Press Enter to search">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										基础积累
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										DDD
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/09/16/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/DDD/%E4%BB%80%E4%B9%88%E6%98%AFDDD/">
+                     
+										    DDD基础知识
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/2024/09/17/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/DDD/%E5%A4%A7%E7%99%BD%E8%AF%9D%E8%AE%B2DDD%E6%A6%82%E5%BF%B5/">
+                     
+										    大白话讲DDD概念
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										ElasticSearch
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/09/21/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/ElasticSearch/%E5%9F%BA%E7%A1%80%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%9F%A5%E8%AF%A2/">
+                     
+										    基本接口和查询
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										MySQL
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/09/21/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/%E4%BD%BF%E7%94%A8%E7%BB%8F%E9%AA%8C/">
+                     
+										    使用经验
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/09/16/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/%E5%9F%BA%E7%A1%80%E4%BF%A1%E6%81%AF/">
+                     
+										    基础信息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/09/16/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F/">
+                     
+										    日志系统
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/09/16/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/%E7%B4%A2%E5%BC%95/">
+                     
+										    索引
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/09/16/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/%E9%94%81%E5%92%8C%E5%A4%9A%E7%89%88%E6%9C%AC%E5%B9%B6%E5%8F%91/">
+                     
+										    锁和多版本并发
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content" class="content">
+		<h1 id="article-title">
+	大白话讲DDD概念
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+	
+
+	<span>Lightning</span>
+	<span>2024-09-17 16:31:55</span>
+
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+          
+              <span>
+                  <i class="fa fa-folder" aria-hidden="true">
+                  <a href="/categories/基础积累/">基础积累</a>
+                  </i>
+                
+                  >
+                
+              </span>
+          
+      
+          
+              <span>
+                  <i class="fa fa-folder" aria-hidden="true">
+                  <a href="/categories/基础积累/DDD/">DDD</a>
+                  </i>
+                
+              </span>
+          
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+            
+                <span>
+                    <i class="fa fa-tag" aria-hidden="true">
+                    <a href="/tags/DDD/">DDD</a>
+                    </i>
+                </span>
+            
+        
+    
+  </div>
+
+</div>
+
+<!-- content -->
+<div id="article-content">
+	<h2 id="What（DDD设计概念的统一语言）"><a href="#What（DDD设计概念的统一语言）" class="headerlink" title="What（DDD设计概念的统一语言）"></a>What（DDD设计概念的统一语言）</h2><h3 id="领域"><a href="#领域" class="headerlink" title="领域"></a>领域</h3><ul>
+<li>领域是一个组织所做的业务，以及其中所包含的一切活动、流程、规则等</li>
+<li>领域既可以表示整个业务系统，也可以表示其中某个核心域或者支撑子域</li>
+<li>以一个C端抽奖领域为例：<br><img src="https://awps-assets.meituan.net/mit-x/blog-images-bundle-2017/9b589fa0.svg" alt="一个含有子域和限界上下文的领域"></li>
+</ul>
+<h3 id="子域"><a href="#子域" class="headerlink" title="子域"></a>子域</h3><ul>
+<li>子域是业务领域的一部分，可以认为子域代表了一个单一的、有逻辑的领域模型</li>
+<li>划分子域体现了分而治之的思想，是控制问题空间复杂度的一种手段</li>
+<li>三种主要子域类型<ul>
+<li>核心域（Core Domain）：是组织中最重要的项目，需要投入大量资源打磨</li>
+<li>支撑域（Supporting Domain）：定制开发，重点支撑核心域</li>
+<li>通用域（Generic Domain）：可采用现成的系统，投入较少资源</li>
+</ul>
+</li>
+<li>例子：到餐供商<ul>
+<li>核心域：商品管理、商品售卖</li>
+<li>支撑域：审核、用户域访问控制</li>
+<li>通用：消息通知</li>
+</ul>
+</li>
+</ul>
+<h3 id="限界上下文"><a href="#限界上下文" class="headerlink" title="限界上下文"></a>限界上下文</h3><ul>
+<li>限界上下文是一个显示边界，领域模型作用于边界之内，它的意义是有上下文的</li>
+<li>限界上下文的作用是限定模型的应用范围，在同一个上下文中，要保证模型在逻辑上统一，而不用考虑它是不是适用于边界之外的情况</li>
+</ul>
+<h3 id="上下文映射"><a href="#上下文映射" class="headerlink" title="上下文映射"></a>上下文映射</h3><ul>
+<li>不同上下文之间的业务实体要实现交互的集成方式，就是上下文映射</li>
+<li>上下文映射类型：<a target="_blank" rel="noopener" href="https://www.greaterway.cn/archives/shang-xia-wen-ying-she">上下文映射</a></li>
+<li>一个抽象的上下文映射图：<br><img src="https://img2023.cnblogs.com/blog/984232/202311/984232-20231122070204411-1693587591.png" alt="抽象的上下文映射图"></li>
+<li>一个具体的上下文映射图：<br><img src="/../../../images/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/DDD/%E5%85%B7%E4%BD%93%E7%9A%84%E4%B8%8A%E4%B8%8B%E6%96%87%E6%98%A0%E5%B0%84%E5%9B%BE.JPG" alt="具体的上下文映射图"></li>
+</ul>
+<h3 id="领域模型"><a href="#领域模型" class="headerlink" title="领域模型"></a>领域模型</h3><ul>
+<li>领域模型是关于某个特定业务领域的软件模型。通常，领域模型通过对象模型来实现，这些对象同时包含了数据和行为，并且表达了准确的业务含义。</li>
+<li>领域分为问题空间（problem space）和解决方案空间（solution space）<ul>
+<li>问题空间是领域的一部分，对问题空间的开发将产生一个新的核心域。对问题空间的评估应该同时考虑已有子域和额外所需子域。因此，问题空间是核心域和其他子域的组合</li>
+<li>解决方案空间包括一个或多个限界上下文，即一组特定的软件模型。这是因为限界上下文即是一个特定的解决方案，它通过软件的方式来实现解决方案</li>
+</ul>
+</li>
+</ul>
+<h3 id="领域建模方法"><a href="#领域建模方法" class="headerlink" title="领域建模方法"></a>领域建模方法</h3><ul>
+<li>用例分析法：获取用例描述 -&gt; 寻找概念类（名词） -&gt; 添加关联 -&gt; 添加属性 -&gt; 模型精化</li>
+<li>四色建模：业务关键时刻 -&gt; 角色 -&gt; 人-事-物 -&gt; 描述</li>
+<li>事件风暴</li>
+<li>StoryTelling</li>
+</ul>
+<h3 id="贫血模型"><a href="#贫血模型" class="headerlink" title="贫血模型"></a>贫血模型</h3><ul>
+<li>贫血模型指的是只有Getter&#x2F;Setter方法的POJU对象</li>
+<li>这种模型是不健康的，违背了面向对象设计的关键原则，即“数据与行为应该封装在一起”。它的封装性很弱，往往导致领域服务形成一种事务脚本的实现</li>
+</ul>
+<h3 id="充血模型"><a href="#充血模型" class="headerlink" title="充血模型"></a>充血模型</h3><ul>
+<li>富领域模型，封装了领域逻辑的领域模型，它才符合面向对象设计思想</li>
+<li>我们采用面向对象建模范式进行领域设计建模时，尽量实体与值对象都定义为富领域模型</li>
+<li>领域模型仅封装领域逻辑，尽可能不掺杂外部资源的技术实现</li>
+</ul>
+<h3 id="XO（DTO、DO、PO）"><a href="#XO（DTO、DO、PO）" class="headerlink" title="XO（DTO、DO、PO）"></a>XO（DTO、DO、PO）</h3><ul>
+<li>数据传输对象（DTO）：是一种模式，用于在进程中传递数据的对象，目的是减少方法调用的数量</li>
+<li>视图对象（VO）：是消息契约模型的一种，往往遵循MVC模式，为前段UI提供视图呈现所需要的数据</li>
+<li>领域对象（DO）：领域模型对象包含聚合边界内的实体和值对象、领域事件和领域服务，游离于聚合之外的瞬态对象。只要封装了领域逻辑，就可以认为是领域对象</li>
+<li>持久化对象（PO）：对象字段持有的数据需要持久化到数据表中，参会与到持久化操作的对象成为持久化对象</li>
+</ul>
+<h3 id="实体Entity"><a href="#实体Entity" class="headerlink" title="实体Entity"></a>实体Entity</h3><ul>
+<li>DDD中要求实体是唯一的且可持续变化的。意思是说在实体的生命周期内，无论其如何变化，其仍旧是同一个实体</li>
+<li>实体三要素：<ul>
+<li>身份标识：实体可以在相当长的一段时间内持续地变化，所以需要ID，例如：商品ID、人的身份证号码</li>
+<li>属性：用来说明实体的静态特征，并持有数据与状态。例如：商品名称</li>
+<li>领域行为：实体拥有领域行为，可以更好地说明其作为主体的动态特征。实体拥有的变更状态的领域行为，修改的只是对象的内存状态，与持久化无关。领域行为避免了贫血模型和事务脚本的视线，又能形成对象之间良好的行为协作。例如：商品结算价 &#x3D; 售价*（1-佣金率），这个行为应该由Product对象直接封装</li>
+</ul>
+</li>
+</ul>
+<h3 id="值对象"><a href="#值对象" class="headerlink" title="值对象"></a>值对象</h3><ul>
+<li>为主体对象的属性，通常代表分量、性质、关系、场所、时间、位置</li>
+<li>与实体的三大区别：<ul>
+<li>一个领域概念到底用值对象还是实体类型，第一个判断依据是看业务的参与者对它的相等判断依赖值还是身份标识，前者是值对象，后者是实体</li>
+<li>确定对象的属性是否会发生变化，如果变化了，究竟是产生一个完全不同的对象，还是维持相同的身份标识</li>
+<li>生命周期的管理。值对象没有身份标识，意味着无需管理其生命周期，从对象的角度，它可以随时被创建或销毁，甚至也可以随意克隆用到不同的业务场景</li>
+</ul>
+</li>
+<li>相似之处：<ul>
+<li>属性</li>
+<li>领域行为：如自我验证、自我组合、自我运算</li>
+</ul>
+</li>
+</ul>
+<h3 id="领域事件"><a href="#领域事件" class="headerlink" title="领域事件"></a>领域事件</h3><ul>
+<li>在一个特定领域由一个用户行为触发的，是发生在过去的行为产生的事件，而这个事件是系统的其他部分或关联系统感兴趣的</li>
+<li>封装了主体的状态、代表了因为动作导致的状态变迁，进而产生的结果，即过去发生的事实</li>
+<li>例子：审核域发出领域事件（审核通过&#x2F;驳回），商品管理域订阅该事件，然后更新商品的状态</li>
+</ul>
+<h3 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h3><ul>
+<li>领域模型是现实世界的体现，它们之中会有各种复杂的联系，例如：依赖、关联、泛化等关系。领域对象模型表达了领域概念映射的类以及类之间的关系，类的关系导致了对象之间的耦合</li>
+<li>这种类层次的边界成为耦合，边界内的主对象成为聚合根</li>
+<li>聚合设计原则：完整性、独立性、不变性和一致性</li>
+</ul>
+<h3 id="领域服务"><a href="#领域服务" class="headerlink" title="领域服务"></a>领域服务</h3><ul>
+<li>领域服务与实体、值对象一样，表示了领域模型。不过，它并没有代表一个具体的领域概念，而是封装了领域行为</li>
+<li>我们针对领域行为建模的时候，有限考虑使用值对象和实体来封装领域行为，只有确定无法找到合适的对象来承担时，才将该行为建模为领域服务的方法（领域服务是领域设计建模的最后选择）</li>
+<li>领域服务和聚合的区别:<ul>
+<li>与状态无关的领域行为</li>
+<li>变化方向与聚合不一致的领域行为</li>
+<li>聚合之间协作的领域行为</li>
+<li>聚合与端口之间协作的领域行为</li>
+</ul>
+</li>
+<li>不要将领域行为当做聚合的Dao来理解，甚至认为每一个聚合都有一个一一对应的领域服务</li>
+<li>例子：对订单的验证，如果仅仅需要验证订单的信息是否完整，订单聚合自己就可以实现，可以分配给Order聚合。但是如果出了验证订单信息，还需要验证商品的库存量是否满足购买需求，就需要访问库存上下文的远程服务。对于Order聚合所在的订单上下文来说，库存上下文就属于外部环境，需要通过网关的客户端端口访问。这时候，验证订单整体有效性的领域行为就交给了OrderValidator领域服务</li>
+</ul>
+<h3 id="工厂"><a href="#工厂" class="headerlink" title="工厂"></a>工厂</h3><ul>
+<li>工厂的主要动机是将创建复杂对象和聚合的职责分配给一个单独的对象，给对象本身不负责承担领域模型中的职责，但依然是领域模型设计的一部分</li>
+<li>可以是一个实体中的静态方法，也可以是一个依赖网关&#x2F;资源库的独立类</li>
+</ul>
+<h3 id="网关"><a href="#网关" class="headerlink" title="网关"></a>网关</h3><ul>
+<li>访问外部上下文的端口适配器，将抽象和实现分离，分为端口与适配器</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>三种领域对象：</p>
+<ul>
+<li>实体：具有ID和生命周期的域对象</li>
+<li>值对象：没有ID域对象</li>
+<li>聚合：由聚合根（也是实体）绑定在一起的实体的集合</li>
+</ul>
+<p>领域对象生命周期：</p>
+<ul>
+<li>Repository：存储和加载聚合</li>
+<li>工厂：处理聚合的创建</li>
+</ul>
+<p>领域对象行为：</p>
+<ul>
+<li>领域服务：编排多个聚合</li>
+<li>领域事件：对聚合所发生的情况的描述。发布是公开的，以便其他人可以使用和重构它</li>
+</ul>
+
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2024/09/21/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/%E4%BD%BF%E7%94%A8%E7%BB%8F%E9%AA%8C/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  使用经验
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2024/09/16/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/%E5%9F%BA%E7%A1%80%E4%BF%A1%E6%81%AF/">
+                基础信息
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+
+<script>
+	
+	
+</script>
+
+	</div>
+	<div id="footer">
+	<p>
+	©<span id="footerYear-start"></span>-<span id="footerYear-end"></span>
+
+	
+	    <a href="/">Lightning</a>
+	
+	
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//wujun.me" target="_blank">Wu Jun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+
+
+<script type="text/javascript">
+	document.getElementById('footerYear-start').innerHTML = new Date().getFullYear() + '';
+</script>
+
+<script type="text/javascript">
+	document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';
+</script>
+
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
