@@ -319,7 +319,70 @@
 
 <!-- content -->
 <div id="article-content">
-	<h2 id="MySQL架构"><a href="#MySQL架构" class="headerlink" title="MySQL架构"></a>MySQL架构</h2><p><img src="/../../../images/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/MySQL%E6%9E%B6%E6%9E%84%E5%9B%BE.PNG" alt="MySQL架构图"></p>
+	<h2 id="MySQL数据类型"><a href="#MySQL数据类型" class="headerlink" title="MySQL数据类型"></a>MySQL数据类型</h2><h3 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h3><p><img src="/../../../images/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/MySQL%E6%95%B4%E5%9E%8B%E5%AD%97%E6%AE%B5.JPG" alt="整数类型"></p>
+<ul>
+<li>数据的存储范围 -2^(N-1) ~ 2^(N-1) -1 （N表示位数），如果设置数据为无符号，则只能存正数，存储范围大概扩大一倍</li>
+<li><strong>在建表的时候，整数类型会有设置长度的选项，但是这个设置其实是不起任何作用的，无论设置数字是多少，MySQL存储的时候都是按照最大的位数进行存储的，且在插入数据的时候也不会因为设置了tinyint(1)就不会允许插入大于一位的数字，例如3也是可以插入的</strong></li>
+</ul>
+<h2 id="浮点数和定点数类型"><a href="#浮点数和定点数类型" class="headerlink" title="浮点数和定点数类型"></a>浮点数和定点数类型</h2><p>类型名称<br>|类型名称|说明|存储需求|<br>|FLOAT|单精度浮点数|4个字节|<br>|DOUBLE|双精度浮点数|8个字节|<br>|DECIMAL(M,D), DEC|压缩的“严格”定点数|M+2个字节|</p>
+<p>DECIMAL：M表示整数部分加小数部分，D表示小数部分位数<br>精度问题：浮点数类型有个缺陷，就是不精准。因此，在一些对精确度要求较高的项目中，千万不要使用浮点数，不然会导致结果错误，甚至是造成不可挽回的损失</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="number">0.05</span> + <span class="number">0.01</span>);</span><br><span class="line">输出： <span class="number">0.060000000000000005</span></span><br></pre></td></tr></table></figure>
+
+<p>Java中进行浮点数运算的时候，会出现丢失精度的问题。那么我们如果在进行商品价格计算的时候，就会出现问题。很有可能造成我们手中有0.06元，却无法购买一个0.05元和一个0.01元的商品</p>
+<p><strong>浮点数类型是把十进制数转换成二进制数存储，DECIMAL则不同，它是把十进制数的整数部分和小数部分拆开，分别转换成十六进制数，进行存储。这样，所有的数值，就都可以精准表达了，不会存在因为无法表达而损失精度的问题。</strong></p>
+<p>错误示例：商品specialmenu的毛利率字段<br><img src="/../../../images/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/%E9%94%99%E8%AF%AF%E4%BE%8B%E5%AD%90.PNG" alt="错误例子"></p>
+<h3 id="日期类型"><a href="#日期类型" class="headerlink" title="日期类型"></a>日期类型</h3><p><img src="/../../../images/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/%E6%97%A5%E6%9C%9F%E7%B1%BB%E5%9E%8B.JPG" alt="日期类型"><br>​</p>
+<ul>
+<li>mysql时间存储最小单位是秒，如果需要存储更精确的时间，可以使用BIGINT来存储<ul>
+<li>DATETIME （8字节）</li>
+<li>TIMESTAMP （4字节）最多只能到2038年</li>
+<li>YEAR （1字节）<br><strong>在实际项目中，尽量用DATETIME类型。</strong>因为这个数据类型包括了完整的日期和时间信息，使用起来比较方便。毕竟，如果日期时间信息分散在好几个字段，就会很不容易记，而且查询的时候，SQL语句也会更加复杂。</li>
+</ul>
+</li>
+</ul>
+<h3 id="文本类型"><a href="#文本类型" class="headerlink" title="文本类型"></a>文本类型</h3><ul>
+<li>VARCHAR （变长 0-65,535字节）<ul>
+<li>VARCHAR类型每个值只占用刚好够用的字节再加上一个或者两个用来记录其长度的字节，255字节以内用一个字节记录长度，以上用2个字节。</li>
+<li>优点<ul>
+<li>当最大长度远大于平均长度时，变长字符串会更节省存储空间</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>修改字段的时候，如果存储页没有空余空间会触发页分裂操作</li>
+<li>由长的字符串修改成短的时候，会产生碎片</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>CHAR （定长）<ul>
+<li>因为CHAR类型会在不够长度的字符串后面添加空格，当select以后再截短末尾空格，所以存储“ABC ”后，再select出会变成“ABC”</li>
+<li>适合存储较小的定长字符串</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>既然varchar是可变长度的那么设计表的时候都设置一个很大的数字，这样不是更好吗？</p>
+<p>虽然使用varchar(100)和varchar(10)存储’hello12345’字符串占用的磁盘空间一样，但是消耗的内存不一样，更长的列消耗的内存会更多。因为MySQL通常会分配固定大小的内存块来保存内部值。尤其是使用临时表进行排序会操作时，会消耗更多的内存。在使用磁盘进行排序时，也是一样</p>
+<hr>
+<p>​<br><img src="/../../../images/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/BLOB%E5%92%8CTEXT%E7%B1%BB%E5%9E%8B.JPG" alt="BLOB和TEXT"><br>需要使用1-4个字节来记录长度。当一行的长度超过限制的时候，数据库会在一个单独的外部存储中保存实际的值，在行内留下一个指针。具体内容可以看<a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/5.7/en/column-count-limit.html">Innodb行长度限制</a></p>
+<ul>
+<li>BLOB（二进制）可以保存图片、视频</li>
+<li>TEXT（字符）</li>
+<li>Enum<ul>
+<li>如果字段只有固定几种字符串比如“男”“女”时可以使用枚举类型。</li>
+</ul>
+</li>
+</ul>
+<h2 id="行记录格式"><a href="#行记录格式" class="headerlink" title="行记录格式"></a>行记录格式</h2><p>InnoDB采用B+树作为底层的数据结构，以主键叶子节点页为例，行记录格式如下图所示。变长字段列记录了VARCHAR&#x2F;TEXT&#x2F;BLOB等变长数据类型列内容长度，NULL值列表记录了本行中空字段的列，Recorde Header存储了各种标识(下一个记录的指针，记录中列的数量等），cluster key id标识聚簇索引，non-key fields标识其他非空字段。详细解释请参考InnoDB的存储结构</p>
+<p><img src="/../../../images/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/InnoDB%E5%AD%97%E6%AE%B5%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84.jpeg" alt="InnoDB存储结构">​</p>
+<p>InnoDB数据页默认为16KB，每个数据页至少保留<strong>2行记录</strong>，每行最大长度理论值为8KB，实际由于数据结构其他字段占用，用户字段会略小于8KB，如果用户数据量超过了8KB，那么会有某个字段数据被记录到溢出页（off-page）中。</p>
+<p>当前InnoDB支持四种行格式，Compact、Redundant、Dynamic和Compressed，Redundant是为兼容更老版本保留的格式，目前已基本不使用，后两种是MySQL5.1引入的新格式。当前主流的格式为<strong>Compact</strong>（MySQL 5.6默认格式），Dynamic（MySQL5.7.9以后默认格式）和Compressed格式。基本的存储如下图所示，创建不同行存储格式的表格，然后插入两行数据，第一行数据量小于8KB，第二行超过8KB，使用hexdump解析文件并作图。</p>
+<ul>
+<li><strong>Compact格式将不超过8KB数据存储在数据行中，假如数据量超过8KB，将只在行中保存768字节前缀，其他字段放在溢出页中，使用20字节记录溢出页位置。</strong></li>
+<li>Dynamic格式同样将不超过8KB数据保存到数据行中，假如数据量超过8KB，数据行中将不保留任何列数据，所有数据都将在溢出页中保存（不同点），使用20字节记录溢出页位置。</li>
+<li>Compressed格式将使用zlib算法压缩存储，减少了存储数据量，但存取数据时需要压缩解压，并且Buffer Pool会同时缓存部分压缩前和压缩后数据，造成一定的缓存浪费。</li>
+</ul>
+<h2 id="MySQL架构"><a href="#MySQL架构" class="headerlink" title="MySQL架构"></a>MySQL架构</h2><p><img src="/../../../images/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/MySQL%E6%9E%B6%E6%9E%84%E5%9B%BE.PNG" alt="MySQL架构图"></p>
 <h2 id="MySQL存储引擎"><a href="#MySQL存储引擎" class="headerlink" title="MySQL存储引擎"></a>MySQL存储引擎</h2><table>
 <thead>
 <tr>

@@ -342,6 +342,11 @@
 <p>简单来说，InnoDB中，表的主键索引是聚簇索引，索引和数值存储在同一节点，其余索引是非聚簇索引，只存储与主键索引的映射关系；MyISAM主键和其他索引没有区别看，都是非聚簇索引</p>
 <h2 id="索引下推"><a href="#索引下推" class="headerlink" title="索引下推"></a>索引下推</h2><p><img src="/../../../images/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/%E7%B4%A2%E5%BC%95%E4%B8%8B%E6%8E%A8.jpeg" alt="索引下推的变化"></p>
 <ul>
+<li>个人理解：可以理解为有一个多级索引（a，b）等，其中a查询条件是范围查询，同时会涉及b的精确查询<ul>
+<li>如果不使用索引下推，会扫描B+树，把符合a取值范围的id全部找出来进行回表，回表之后拿到所有数据，再对b条件进行过滤</li>
+<li>如果使用索引下推，当扫描B+树的时候，利用联合索引的数据，对a和b同时进行筛选过滤，将同时符合双方条件的id进行回表，这种情况下回表的数据将大大减少（由于增加了b的过滤条件）</li>
+</ul>
+</li>
 <li>文章：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/yidengjiagou/p/16623966.html">MySQL查询性能优化七种武器之索引下推</a></li>
 <li>原理：本来在MySQL Server层做的筛选操作，下推到存储引擎层来做</li>
 <li>优点<ol>
@@ -357,7 +362,7 @@
 <li>引用了存储函数的条件不能下推，因为存储引擎无法调用存储函数</li>
 </ul>
 </li>
-<li>例子<br>select  name,age from table where name like ‘张%’ and age &#x3D;18</li>
+<li>例子<br>select  name,age from table where name like ‘张%’ and age &#x3D;18<br><img src="/../../../images/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/%E7%B4%A2%E5%BC%95%E4%B8%8B%E6%8E%A8.jpeg" alt="索引下推"></li>
 </ul>
 <h2 id="设计索引"><a href="#设计索引" class="headerlink" title="设计索引"></a>设计索引</h2><ul>
 <li>WHERE、JOIN、GROUP BY、ORDER BY等语句使用的列建议使用索引</li>

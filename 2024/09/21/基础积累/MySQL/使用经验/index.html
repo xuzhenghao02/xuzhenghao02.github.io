@@ -369,6 +369,46 @@
 <p>如果知道边界值为100000，100010后，就可以这样优化：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> id,name,balance </span><br><span class="line"><span class="keyword">FROM</span> account </span><br><span class="line"><span class="keyword">WHERE</span> id </span><br><span class="line"><span class="keyword">BETWEEN</span> <span class="number">100000</span> <span class="keyword">AND</span> <span class="number">100010</span> </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> id <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
 
+<h2 id="修改表结构"><a href="#修改表结构" class="headerlink" title="修改表结构"></a>修改表结构</h2><h3 id="一种简单的Copy处理方法"><a href="#一种简单的Copy处理方法" class="headerlink" title="一种简单的Copy处理方法"></a>一种简单的Copy处理方法</h3><p>在mysql5.6以前使用的方法：复制</p>
+<ol>
+<li>按照表 A 的定义新建一个表 B</li>
+<li>对表 A 加写锁</li>
+<li>在表 B 上执行 DDL 指定的操作</li>
+<li>将 A 中的数据拷贝到 B</li>
+<li>释放 A 的写锁</li>
+<li>删除表 A</li>
+<li>将表 B 重命名为 A</li>
+</ol>
+<p>缺点:</p>
+<p>如果表 A 数据量比较大，拷贝到表 B 的过程会消耗大量时间，并占用额外的存储空间。此外，由于 DDL 操作占用了表 A 的写锁，所以表 A 上的 DDL 和 DML 都将阻塞无法提供服务。</p>
+<h3 id="一种更高效的Inplace处理方法"><a href="#一种更高效的Inplace处理方法" class="headerlink" title="一种更高效的Inplace处理方法"></a>一种更高效的Inplace处理方法</h3><p>mysql5.6以后可以使用：onlion DDL</p>
+<ol>
+<li>建立一个临时文件，扫描原表主键的所有数据页</li>
+<li>用数据页中原表记录生成B+树，存储到临时文件中（innodb_temp_data_file_path临时表空间下创建临时文件）</li>
+<li>生成临时文件的过程中，将所有对原表的操作记在一个日志文件(rowlog)中</li>
+<li>临时文件生成后，将日志文件中的操作应用到临时文件</li>
+<li>用临时文件替换原表数据文件</li>
+</ol>
+<p>​<img src="/../../../images/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/Inplace%E8%BF%87%E7%A8%8B.JPG" alt="Inplace过程"><br>对于inplace方式，mysql内部以“是否修改记录格式”为基准也分为两类，</p>
+<ul>
+<li>一类需要重建表(重新组织记录)，比如optimize table、添加索引、添加&#x2F;删除列、修改列NULL&#x2F;NOT NULL属性等；</li>
+<li>另外一类是只需要修改表的元数据，比如删除索引、修改列名、修改列默认值、修改列自增值等。Mysql将这两类方式分别称为rebuild方式和no-rebuild方式。</li>
+</ul>
+<p>具体哪些操作可以使用Inplace方式：可以查看官方文档，或别人总结。</p>
+<p>mysql8.0新增INSTANT算法，因为我们线上大部分都是mysql5.7，本文不再赘述，感兴趣同学可以点击此处了解。</p>
+<h3 id="修改表结构对事务影响"><a href="#修改表结构对事务影响" class="headerlink" title="修改表结构对事务影响"></a>修改表结构对事务影响</h3><p>MDL锁主要作用是维护表元数据的数据一致性，在表上有活动事务（显式或隐式）的时候，不可以对元数据进行写入操作。因此从MySQL5.5版本开始引入了MDL锁，来保护表的元数据信息，用于解决或者保证DDL操作与DML操作之间的一致性。元数据锁是server层的锁，表级锁，每执行一条DML、DDL语句时都会申请MDL锁，DML操作需要MDL读锁，DDL操作需要MDL写锁（MDL加锁过程是系统自动控制，无法直接干预，读读共享，读写互斥，写写互斥），申请MDL锁的操作会形成一个队列，队列中写锁获取优先级高于读锁。MDL锁主要解决了一下两点问题</p>
+<ul>
+<li>一个是事务隔离问题，比如在可重复隔离级别下，会话A在2次查询期间，会话B对表结构做了修改，两次查询结果就会不一致，无法满足可重复读的要求；</li>
+<li>另外一个是数据复制的问题，比如会话A执行了多条更新语句期间，另外一个会话B做了表结构变更并且先提交，就会导致slave在重做时，先重做alter，再重做update时就会出现复制错误的现象。</li>
+</ul>
+<p>有关更多MDL锁的知识可以点击：MySQL内核技术分享-MDL锁解析(一)</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/5.7/en/innodb-online-ddl.html">mysql5.7官方文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/115277009">MySQL 8.0 Online DDL和pt-osc、gh-ost深度对比分析</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cchust/p/4639397.html">onlion DDL</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.modb.pro/db/45669">MDL锁相关内容</a></li>
+</ul>
+
 </div>
 
 <!-- post-guide -->
