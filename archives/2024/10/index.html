@@ -309,32 +309,17 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/2024/09/21/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/ElasticSearch/%E5%9F%BA%E7%A1%80%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%9F%A5%E8%AF%A2/">
+			<a href="/2024/10/05/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/ElasticSearch/02.ES%E5%9F%BA%E7%A1%80%E6%9F%A5%E8%AF%A2/">
 				<h2 class="index-title">
-					基本接口和查询
+					02.ES基础查询
 				</h2>
 				<div class="index-brief">
-					参考文档
-ElasticSearch权威指南
-字段term、keyword分别使用term和match查询的效果
-ES的Query、Filter、Metric和Bucketing使用详解
-
-Restful API 接口
-
-
-方法
-url
-描述
-
-
-
-PUT（创建，修改）
-localhost:9200
+					
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-09-21</span>
+				    <span>2024-10-05</span>
                     
                             
                                 
@@ -360,61 +345,22 @@ localhost:9200
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2024/09/21/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/05.%E4%BD%BF%E7%94%A8%E7%BB%8F%E9%AA%8C/">
+			<a href="/2024/10/04/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/ElasticSearch/01.ES%E7%B4%A2%E5%BC%95/">
 				<h2 class="index-title">
-					05.使用经验
+					01.ES索引
 				</h2>
 				<div class="index-brief">
-					MySQL深分页导致的慢查询表结构如下：
-12CREATE TABLE account (     id int(11) NOT NULL AUTO_INCREMENT COMMENT &#x27;主键Id&#x27;,   name varchar(255) DEFAULT NULL COMMEN
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-09-21</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/基础积累/">基础积累</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/基础积累/MySQL/">MySQL</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/09/17/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/DDD/02.%E5%A4%A7%E7%99%BD%E8%AF%9D%E8%AE%B2DDD%E6%A6%82%E5%BF%B5/">
-				<h2 class="index-title">
-					02.大白话讲DDD概念
-				</h2>
-				<div class="index-brief">
-					What（DDD设计概念的统一语言）领域
-领域是一个组织所做的业务，以及其中所包含的一切活动、流程、规则等
-领域既可以表示整个业务系统，也可以表示其中某个核心域或者支撑子域
-以一个C端抽奖领域为例：
+					索引
+创建索引在使用ES之前，我们需要先创建好索引，对一个索引而言，是由3个部分组成：
 
-子域
-子域是业务领域的一部分，可以认为子域代表了一个单一的、有逻辑的领域模型
-划分子域体现了分而治
+mappings：描述索引的字段，以及该字段的各种属性
+setting：描述该索引的全局配置，包括副本数、分片数等
+aliases：索引别名配置；这两部分的内容一旦设置好后，部分属性是可以修改的，有些就是永远不
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-09-17</span>
+				    <span>2024-10-04</span>
                     
                             
                                 
@@ -430,7 +376,7 @@ localhost:9200
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/基础积累/DDD/">DDD</a>
+                                        <a href="/categories/基础积累/ElasticSearch/">ElasticSearch</a>
 										
                                     </span>
                                 
@@ -440,48 +386,9 @@ localhost:9200
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2024/09/16/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/01.%E5%9F%BA%E7%A1%80%E4%BF%A1%E6%81%AF/">
+			<a href="/2024/10/04/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/ElasticSearch/03.ES%E6%9E%B6%E6%9E%84/">
 				<h2 class="index-title">
-					01.基础信息
-				</h2>
-				<div class="index-brief">
-					MySQL数据类型整数类型
-
-数据的存储范围 -2^(N-1) ~ 2^(N-1) -1 （N表示位数），如果设置数据为无符号，则只能存正数，存储范围大概扩大一倍
-在建表的时候，整数类型会有设置长度的选项，但是这个设置其实是不起任何作用的，无论设置数字是多少，MySQL存储的时候都是按照最大的位数进
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-09-16</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/基础积累/">基础积累</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/基础积累/MySQL/">MySQL</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/09/16/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/03.%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F/">
-				<h2 class="index-title">
-					03.日志系统
+					02.ES分布式搜索架构
 				</h2>
 				<div class="index-brief">
 					
@@ -489,7 +396,7 @@ localhost:9200
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-09-16</span>
+				    <span>2024-10-04</span>
                     
                             
                                 
@@ -505,7 +412,7 @@ localhost:9200
                                 
                                     <span>
                                         <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/基础积累/MySQL/">MySQL</a>
+                                        <a href="/categories/基础积累/ElasticSearch/">ElasticSearch</a>
 										
                                     </span>
                                 
@@ -515,103 +422,26 @@ localhost:9200
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2024/09/16/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/02.%E7%B4%A2%E5%BC%95/">
+			<a href="/2024/10/02/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/DDD/03.DDD%E8%A7%84%E7%BA%A6%E5%92%8C%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/">
 				<h2 class="index-title">
-					02.索引
+					03.DDD规约与代码实践
 				</h2>
 				<div class="index-brief">
-					索引的组织结构
-一个节点能存储的索引数量越多，树的高度越低，查询复杂度越小
-索引的存储结构
+					总则DDD规约
+领域模型必须遵守统一语言
+坚守边界（两重分析边界与四重设计边界）
 
-聚簇索引
-提升IO密集型应用性能
-Row的移动不影响二级索引
-如果主键值非自增，在插入记录时，可能造成记录移动或页分裂，影响性能
-
-
-非聚簇索引
-索引与数据分离，相对聚簇索引占用空间小
-InnoDB二级索引
+细则
+保证领域分析模型、领域设计模型和领域实现模型的一致
+先有领域模型，再有数据模型
+不要将领域模型暴露在网关蹭（access&#x2F;invoke）之外，共享内核除外
+聚合的关联关系只能通过聚合根ID引用
+聚合不
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2024-09-16</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/基础积累/">基础积累</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/基础积累/MySQL/">MySQL</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/09/16/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/04.%E9%94%81%E5%92%8C%E5%A4%9A%E7%89%88%E6%9C%AC%E5%B9%B6%E5%8F%91/">
-				<h2 class="index-title">
-					04.锁和多版本并发
-				</h2>
-				<div class="index-brief">
-					
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-09-16</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/基础积累/">基础积累</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/基础积累/MySQL/">MySQL</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/09/16/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/DDD/01.%E4%BB%80%E4%B9%88%E6%98%AFDDD/">
-				<h2 class="index-title">
-					01.什么是DDD
-				</h2>
-				<div class="index-brief">
-					What（什么是领域模型）
-领域模型：关注的是领域本身，是业务的核心实体，体现在问题域关键概念和之间的联系，构建领域模型的目标是看模型能否清晰表达业务语义、模型能否显性化、扩展是其次
-数据模型：关注的是数据存储，在我们所有的业务中离不开数据，离不开数据的CRUD，构建数据模型目标是看扩散性、性能等非
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-09-16</span>
+				    <span>2024-10-02</span>
                     
                             
                                 

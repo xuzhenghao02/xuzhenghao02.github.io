@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		01.ES索引 | 
+	 
+	Hexo
+	</title>
+	
+	<!-- keywords,description -->
+	
+	
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "wujun234.com";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js"></script>
+
+	
+	
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+	<header id="header">
+    <a id="title" href="/" class="logo">Hexo</a>
+
+	<ul id="menu">
+    
+
+    
+
+    
+
+    
+      
+      
+        <li class="menu-item">
+          <a href='https://github.com/wujun234/hexo-theme-tree' class="menu-item-link" target="_blank">
+            Tree
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a href='https://github.com/wujun234/uid-generator-spring-boot-starter' class="menu-item-link" target="_blank">
+            UidGenerator
+          </a>
+        </li>
+      
+    
+  
+    
+      <li class="menu-item">
+        <a href='https://github.com/wujun234' class="menu-item-link" target="_blank">
+          <i class="fa fa-github fa-2x"></i>
+        </a>
+      </li>
+    
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="Press Enter to search">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										基础积累
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										DDD
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/09/16/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/DDD/01.%E4%BB%80%E4%B9%88%E6%98%AFDDD/">
+                     
+										    01.什么是DDD
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/09/17/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/DDD/02.%E5%A4%A7%E7%99%BD%E8%AF%9D%E8%AE%B2DDD%E6%A6%82%E5%BF%B5/">
+                     
+										    02.大白话讲DDD概念
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/10/02/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/DDD/03.DDD%E8%A7%84%E7%BA%A6%E5%92%8C%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5/">
+                     
+										    03.DDD规约与代码实践
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										ElasticSearch
+									</a>
+									
+							<ul>
+								<li class="file active">
+									<a href="/2024/10/04/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/ElasticSearch/01.ES%E7%B4%A2%E5%BC%95/">
+                     
+										    01.ES索引
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/10/05/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/ElasticSearch/02.ES%E5%9F%BA%E7%A1%80%E6%9F%A5%E8%AF%A2/">
+                     
+										    02.ES基础查询
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/10/04/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/ElasticSearch/03.ES%E6%9E%B6%E6%9E%84/">
+                     
+										    02.ES分布式搜索架构
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/09/21/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/ElasticSearch/%E5%9F%BA%E7%A1%80%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%9F%A5%E8%AF%A2/">
+                     
+										    基本接口和查询
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										MySQL
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2024/09/16/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/01.%E5%9F%BA%E7%A1%80%E4%BF%A1%E6%81%AF/">
+                     
+										    01.基础信息
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/09/16/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/02.%E7%B4%A2%E5%BC%95/">
+                     
+										    02.索引
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/09/16/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/03.%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F/">
+                     
+										    03.日志系统
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/09/16/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/04.%E9%94%81%E5%92%8C%E5%A4%9A%E7%89%88%E6%9C%AC%E5%B9%B6%E5%8F%91/">
+                     
+										    04.锁和多版本并发
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2024/09/21/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/MySQL/05.%E4%BD%BF%E7%94%A8%E7%BB%8F%E9%AA%8C/">
+                     
+										    05.使用经验
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content" class="content">
+		<h1 id="article-title">
+	01.ES索引
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+	
+
+	<span>Lightning</span>
+	<span>2024-10-04 09:59:48</span>
+
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+          
+              <span>
+                  <i class="fa fa-folder" aria-hidden="true">
+                  <a href="/categories/基础积累/">基础积累</a>
+                  </i>
+                
+                  >
+                
+              </span>
+          
+      
+          
+              <span>
+                  <i class="fa fa-folder" aria-hidden="true">
+                  <a href="/categories/基础积累/ElasticSearch/">ElasticSearch</a>
+                  </i>
+                
+              </span>
+          
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+    
+  </div>
+
+</div>
+
+<!-- content -->
+<div id="article-content">
+	<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p><img src="/../../../images/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/ElasticSearch/ES%E5%92%8CMySQL%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB.png" alt="ES与MySQL对应关系"></p>
+<h2 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h2><p>在使用ES之前，我们需要先创建好索引，对一个索引而言，是由3个部分组成：</p>
+<ol>
+<li>mappings：描述索引的字段，以及该字段的各种属性</li>
+<li>setting：描述该索引的全局配置，包括副本数、分片数等</li>
+<li>aliases：索引别名配置；这两部分的内容一旦设置好后，部分属性是可以修改的，有些就是永远不可以修改(除非重建索引)。</li>
+</ol>
+<p>首先我们创建一个简单的索引(在ES7.x中已经不存在type了)</p>
+<ul>
+<li><p>HTTP语法</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">创建一个shop的索引，副本数设置为1，分片数为2，后面我们直接省去http://localhost:8080 ，使用<span class="string">&#x27;方法 url路径&#x27;</span>来描述我们的url，另外也会省去-d 描述，直接添加参数,如下的url我们简写成 PUT /shop</span></span><br><span class="line">curl -XPUT &#x27;http://localhost:8080/shop&#x27; </span><br><span class="line">-d &#x27;</span><br><span class="line">&#123;</span><br><span class="line">    //字段配置</span><br><span class="line">    &quot;mappings&quot;:&#123;  </span><br><span class="line">      &quot;properties&quot;:&#123;</span><br><span class="line">          &quot;address&quot;:&#123;</span><br><span class="line">              &quot;type&quot;:&quot;text&quot;,</span><br><span class="line">              &quot;analyzer&quot;:&quot;ik_smart&quot;</span><br><span class="line">          &#125;,</span><br><span class="line">          &quot;avgprice&quot;:&#123;</span><br><span class="line">              &quot;type&quot;:&quot;long&quot;</span><br><span class="line">          &#125;,</span><br><span class="line">          &quot;cityid&quot;:&#123;</span><br><span class="line">              &quot;type&quot;:&quot;integer&quot;</span><br><span class="line">          &#125;,</span><br><span class="line">          &quot;shopid&quot;:&#123;</span><br><span class="line">              &quot;type&quot;:&quot;integer&quot;</span><br><span class="line">          &#125;,</span><br><span class="line">          &quot;shopname&quot;:&#123;</span><br><span class="line">              &quot;type&quot;:&quot;keyword&quot;</span><br><span class="line">          &#125;,</span><br><span class="line">          &quot;shoppoi&quot;:&#123;</span><br><span class="line">              &quot;type&quot;:&quot;geo_point&quot;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    //索引的一些配置</span><br><span class="line">    &quot;settings&quot;:&#123;</span><br><span class="line">      &quot;index&quot;:&#123;</span><br><span class="line">          &quot;number_of_shards&quot;:2,</span><br><span class="line">          &quot;number_of_replicas&quot;:1</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    //别名配置</span><br><span class="line">    &quot;aliases&quot;:&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;&#x27;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>我们将针对这三个部分进行详细说明，介绍索引创建中的细节</p>
+<h3 id="Mapping介绍"><a href="#Mapping介绍" class="headerlink" title="Mapping介绍"></a>Mapping介绍</h3><p>ES中的Mappings的作用类似mysql中我们定义表结构的schema，用来定义一个文档格式，包含的字段，是否倒排还是存储等，核心作用如下：</p>
+<ul>
+<li>定义索引中的字段的名称</li>
+<li>定义字段的数据类型，比如字符串、数字、布尔</li>
+<li>字段，倒排索引的相关配置，比如设置某个字段为不被索引、记录position等</li>
+</ul>
+<p>在 ES 早期版本，一个索引下是可以有多个 Type 的，从 7.0 开始，一个索引只有一个 Type(名字唯一定义为_doc)，也可以说一个 Type 有一个 Mapping 定义。</p>
+<p>一个Mappings的组成部分如下：</p>
+<ul>
+<li><p>动态映射(dynamic mapping)</p>
+<p>设置动态映射的行为</p>
+</li>
+<li><p>元数据域(MetaData fields)</p>
+<p>元数据域(MetaData fields)用来自定义文档的元数据信息如何组织，元数据信息包括_index,_id,以及_source三个部分</p>
+</li>
+<li><p>属性(Fields properties)</p>
+<p>Properties区域是由许多的字段及其属性构成，定义了mappings的最核心的数据结构</p>
+</li>
+</ul>
+<p>一个典型的mapping示例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;mappings&quot;:&#123;</span><br><span class="line">    &quot;dynamic&quot;:true|false|strict,</span><br><span class="line">    &quot;_metadata&quot;:&#123;</span><br><span class="line">      &quot;_source&quot;:true,</span><br><span class="line">      ...</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;properties&quot;:&#123;</span><br><span class="line">      &quot;shopid&quot;:&#123;</span><br><span class="line">        &quot;type&quot;:integer</span><br><span class="line">      &#125;</span><br><span class="line">      ....</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-动态映射-dynamic-mapping"><a href="#1-动态映射-dynamic-mapping" class="headerlink" title="1.动态映射(dynamic mapping)"></a>1.动态映射(dynamic mapping)</h4><p>在ES中，Mappings设置是十分灵活的，他可以通过用户的输入数据，自动推断出用户定义的字段以及字段对应的各种属性，称之为动态映射(Dynamic Mapping)，也可以用户显示设置。我们先看下如何动态Mapping的设置。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">索引动态Mapping设置，默认dynamic为<span class="literal">true</span></span></span><br><span class="line">PUT /shop</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mapping&quot;:&#123;</span><br><span class="line">    &quot;dynamic&quot;: true</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>dynamic的模式有3种：true(默认值，动态添加新的字段)，false(禁用，忽略新的字段)，strict(严格模式,如果遇到新字段抛出异常)。ES动态映射的类型推断：</p>
+<table>
+<thead>
+<tr>
+<th>JSON格式的数据</th>
+<th>自动推测的字段类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>null</td>
+<td>没有字段被添加</td>
+</tr>
+<tr>
+<td>true or false</td>
+<td>boolean类型</td>
+</tr>
+<tr>
+<td>floating类型数字</td>
+<td>floating类型</td>
+</tr>
+<tr>
+<td>integer</td>
+<td>long类型</td>
+</tr>
+<tr>
+<td>JSON对象</td>
+<td>object类型</td>
+</tr>
+<tr>
+<td>数组</td>
+<td>由数组中第一个非空值决定</td>
+</tr>
+<tr>
+<td>string</td>
+<td>有可能是date类型（开启日期检测）、double或long类型、text类型、keyword类型</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>动态映射一旦开启，很容易被用户误用，造成索引字段的膨胀&#x2F;爆炸，最终就是造成OOM(out of memory)以及各种很难恢复的问题，ES内部有做了一定防范性的配置，如下：</p>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>index.mapping.total_fields.limit</td>
+<td>IMPORT：一个索引中可以拥有字段个数的上线，当然字段别名也属于其中的一种，默认1000</br>TIPS：如果你的MAPPING就是有超级多的字段，建议使用flattend数据类型</td>
+</tr>
+<tr>
+<td>index.mapping.depth.limit</td>
+<td>一个字段最大深度限定，默认为20，内部对象（inner object）的深度设置，例如我们某个字段的object都是基于根来设定的，那么深度为1，另一个字段是基于这个字段来设定的，那么深度为2，以此类推</br>TIPS：不建议超过深度2的设定，深度越大，越容易造成OOM</td>
+</tr>
+<tr>
+<td>index.mapping.nested_fields.limit</td>
+<td>限制一个索引中nested类型的个数，默认为50</td>
+</tr>
+<tr>
+<td>index.mapping.nested_objects.limit</td>
+<td>限制一个文档中所有nested类型对应的对象个数（即nested类型下的字段个数），一个文档可能对应的object有几万之多，这个限制为10000</td>
+</tr>
+<tr>
+<td>index.mapping.field_name_length.limit</td>
+<td>字段名称长度，一般这个不会导致OOM，但是限制这个长度还是很有用的，默认长度为Long.MAX_VALUE（即无限制），我们一般建议不要太长，毕竟序列化和反序列化都需要时间</br>TIPS：域字段不建议使用中文字符以及各种不好辨认的符号，默认符号名称为 英文字符+数字符号+’_’+’-‘即可</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="2-元数据-Meta-Data"><a href="#2-元数据-Meta-Data" class="headerlink" title="2.元数据(Meta Data)"></a>2.元数据(Meta Data)</h4><p>在Elasticsearch下，一个文档除了有数据之外，它还包含了元数据(Metadata)。每创建一条数据时，都会对元数据进行写入等操作，当然有些元数据是在创建mapping的时候就会设置,它里面定义了每个添加的doc的处理方式， 类似于数据库的表结构数据。</p>
+<p>ES中元数据大体分为五中类型：身份元数据、索引元数据、文档元数据、路由元数据以及其他类型的元数据。</p>
+<h5 id="2-1-身份元数据"><a href="#2-1-身份元数据" class="headerlink" title="2.1. 身份元数据"></a>2.1. 身份元数据</h5><ul>
+<li><p>_index：文档所属索引 , 自动被索引，可被查询，聚合，排序使用，或者脚本里访问，_index用处主要在于多个索引查询时，可以用这个字段指定在哪个索引使用，_index在术语查询、聚合查询以及排序都是可以使用的。</p>
+<p>_index示例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">PUT index_1/_doc/1</span><br><span class="line">&#123;</span><br><span class="line">  &quot;text&quot;: &quot;Document in index 1&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">PUT index_2/_doc/2?refresh=true</span><br><span class="line">&#123;</span><br><span class="line">  &quot;text&quot;: &quot;Document in index 2&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">GET index_1,index_2/_search</span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123;</span><br><span class="line">    &quot;bool&quot;: &#123;</span><br><span class="line">      &quot;must&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">          &quot;match&quot;: &#123;</span><br><span class="line">            &quot;_index&quot;: &quot;index_2&quot;   // 指定索引</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          &quot;match&quot;: &#123;</span><br><span class="line">            &quot;text&quot;: &quot;1&quot;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>_id：文档的唯一标识，每个文档现在就是用这个字段来唯一标识的。这个也是为什么能用GET和ids直接进行查询的原因。 而6.0以前其实当你用GET API时，其实用的是uid，现在则是真的在用_id进行查询。_id在mapping中不允许定义, 另外要说的是，可以用id做聚合或者排序操作，但是这个需要使用大量内存加载数据，所以最好是将上面在Percolator type讲过的doc_values确定设置为true（一般默认为 true，二进制是false)</p>
+<p>ATTENTION：_id如果由用户定义，其大小限制为512bytes，如果超过这个，就会拒绝设置</p>
+<p>示例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;mappings&quot;:&#123;</span><br><span class="line">    &quot;dynamic&quot;:true|false|strict,</span><br><span class="line">    &quot;_metadata&quot;:&#123;</span><br><span class="line">      &quot;_source&quot;:true,</span><br><span class="line">      ...</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;properties&quot;:&#123;</span><br><span class="line">      &quot;shopid&quot;:&#123;</span><br><span class="line">        &quot;type&quot;:integer</span><br><span class="line">      &#125;</span><br><span class="line">      ....</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>_type:标示文档属于哪个type，在6.x中开始废弃了，在7.x中已经不使用</p>
+</li>
+</ul>
+<h5 id="2-2-索引元数据"><a href="#2-2-索引元数据" class="headerlink" title="2.2 索引元数据"></a>2.2 索引元数据</h5><ul>
+<li><p>_field_names：索引了每个字段的名字，可以包含null值，exists查询或missing查询方法通过该属性来校验特定的字段，当前这个字段仅记录那些docvalues属性和norm属性被禁用的字段，如果这种类型的字段很少，那么你可以禁用这个字段</p>
+<p>关闭field_names：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PUT shop</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mapping&quot;: &#123;</span><br><span class="line">    &quot;_field_names&quot;: &#123;</span><br><span class="line">      &quot;enabled&quot;: false</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在未来这个字段会被弃用</p>
+</li>
+<li><p>_ignored：存储所有的那些格式不正确的以及字段属性 ignore_malformed 开启的字段，一般不需要特殊定义</p>
+</li>
+</ul>
+<h5 id="2-3-文档元数据"><a href="#2-3-文档元数据" class="headerlink" title="2.3 文档元数据"></a>2.3 文档元数据</h5><ul>
+<li><p>_source：一个doc的原生json数据，不会被索引，但是会存储，用户获取提取字符值，如果启动此字段，索引体积会变大。如果想关闭，可以如下设置：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PUT shop</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mapping&quot;: &#123;</span><br><span class="line">    &quot;_source&quot;: &#123;</span><br><span class="line">      &quot;enabled&quot;: false</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是关闭_source字段一定要三思，一旦关闭后，会有几下几个问题：</p>
+<ul>
+<li>无法使用update,update_by_query和Reindex API</li>
+<li>highlight高亮使用不了</li>
+<li>数据的分词修改、mapping变更以及ES的大版本原地升级都不行</li>
+<li>debug查询或者聚合时使用_source也不行</li>
+<li>未来潜在的一些功能，例如索引crash主动修复功能等</li>
+</ul>
+<p>TIPS：如果觉得_source默认打开导致索引太大，可以提升压缩级别，减少索引的磁盘占用</p>
+</li>
+<li><p>_size：整个_source字段的字节数大小，需要单独安装一个插件才能显示，一般不使用</p>
+</li>
+</ul>
+<h5 id="2-4-路由元数据"><a href="#2-4-路由元数据" class="headerlink" title="2.4 路由元数据"></a>2.4 路由元数据</h5><ul>
+<li><p>_routing：一个doc可以被路由到指定的shard上，通过下面的规则：<code>shard_num = hash(_routing) % num_primary_shards</code>。默认情况下，使用_id字段来参与路由规则，如果此doc有父子关系，则会以父亲的_id作为路由规则，以确保父子数据必须处于同一个shard上，以提高join效率</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">定义routing</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">写入数据</span></span><br><span class="line">PUT shop/_doc/1?routing=user1&amp;refersh=true</span><br><span class="line">&#123;</span><br><span class="line">  &quot;title&quot;: &quot;This is a document&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">GET shop/_doc/1?routing=user1</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是如果指定了路由规则，如果两个文档的_id参数一样，但是路由规则不一样，有可能会造成这两条数据被分发到不同的shard，所有使用自己的路由规则时需要注意_id参数的唯一性</p>
+<p>routing规则我们可以通过查询获得：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET shop/_search</span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123;</span><br><span class="line">    &quot;terms&quot;: &#123;</span><br><span class="line">      &quot;_routing&quot;: [&quot;user1&quot;]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="2-5-其他"><a href="#2-5-其他" class="headerlink" title="2.5 其他"></a>2.5 其他</h5><ul>
+<li><p>_meta：用户可以自定义数据到元数据中，此字段支持查询和更新，其用法如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">PUT shop</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mapping&quot;: &#123;</span><br><span class="line">    &quot;_meta&quot;: &#123;</span><br><span class="line">      &quot;class&quot;: &quot;MyApp:User&quot;,</span><br><span class="line">      &quot;version&quot;: &#123;</span><br><span class="line">        &quot;min&quot;: &quot;1.0&quot;,</span><br><span class="line">        &quot;max&quot;: &quot;1.3&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">当然也可以被更新</span></span><br><span class="line">PUT shop/_mapping</span><br><span class="line">&#123;</span><br><span class="line">  &quot;_meta&quot;: &#123;</span><br><span class="line">    &quot;class&quot;: &quot;MyApp::User3&quot;</span><br><span class="line">    &quot;version&quot;: &#123;</span><br><span class="line">      &quot;min&quot;: &quot;1.3&quot;,</span><br><span class="line">      &quot;max&quot;: &quot;1.5&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">其数据可以被Get Mapping查询获取</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="3-字段定义"><a href="#3-字段定义" class="headerlink" title="3.字段定义"></a>3.字段定义</h4><p>properties是由众多的字段组成，字段由字段名、字段类型、字段属性等组成</p>
+<h5 id="3-1-字段类型（Field-Type）"><a href="#3-1-字段类型（Field-Type）" class="headerlink" title="3.1 字段类型（Field Type）"></a>3.1 字段类型（Field Type）</h5><p>ES中字段类型非常丰富，根据官方的 <a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/7.16/mapping-types.html">ES数据类型介绍</a> 上，可以看到有10个大类，总共47个类型，选一下常见类型介绍</p>
+<h6 id="1-数字类型"><a href="#1-数字类型" class="headerlink" title="1. 数字类型"></a>1. 数字类型</h6><p>数字类型用来描述各种数据信息，是检索中的最基础类型</p>
+<p>WARNING：在5.x及以上的ES版本中使用term query进行查找数字类型数据，性能相比2.x版本急剧下降，且资源利用率超高，<strong>这是因为在5.x版本后，数字类型进行索引替换成了BKD树，这种数据结构导致进行精确查找非常慢，但是进行范围查询速度超级快</strong>，一般快于2.x版本5~10倍，为了解决数字类型精确查找，<strong>建议对数字类型转换成keyword类型</strong>。</p>
+<table>
+ <tr>
+    <th></th>
+    <th>类型</th>
+    <th>取值范围</th>
+    <th>备注</th>
+ </tr>
+  <tr>
+    <td rowspan="4">整型</td>
+    <td>byte</td>
+    <td>-128~127</td>
+    <td rowspan="4">在满足需求的情况下，尽可能选择范围小的数据类型。比如，某个字段的取值最大值不会超过100，那么选择byte类型即可。迄今为止吉尼斯记录的人类的年龄的最大值为134岁，对于年龄字段，short足矣。字段的长度越短，索引和搜索的效率越高。</td>
+  </tr>
+  <tr>
+    <td>short</td>
+    <td>-32768~32767</td>
+  </tr>
+  <tr>
+    <td>integer</td>
+    <td>-2^31^~(2^31^-1)</td>
+  </tr>
+  <tr>
+    <td>long</td>
+    <td>-2^63^~(2^63^-1)</td>
+  </tr>
+  <tr>
+    <td rowspan="4">浮点型</td>
+    <td>double</td>
+    <td>64位双精度IEEE 754浮点类型</td>
+    <td rowspan="4">1. 对于float、half_float和scaled_float,-0.0和+0.0是不同的值，使用term查询查找-0.0不会匹配+0.0，同样range查询中上边界是-0.0不会匹配+0.0，下边界是+0.0不会匹配-0.0。</br>2. 其中scaled_float，比如价格只需要精确到分，price为57.34的字段缩放因子为100，存起来就是5734 优先考虑使用带缩放因子的scaled_float浮点类型。</td>
+  </tr>
+  <tr>
+    <td>float</td>
+    <td>32位双精度IEEE 754浮点类型</td>
+  </tr>
+  <tr>
+    <td>half_float</td>
+    <td>16位双精度IEEE 754浮点类型</td>
+  </tr>
+  <tr>
+    <td>scaled_float</td>
+    <td>缩放类型的浮点数</td>
+  </tr>
+</table>
+
+<h6 id="2-keyword类型"><a href="#2-keyword类型" class="headerlink" title="2. keyword类型"></a>2. keyword类型</h6><ul>
+<li><p>keyword类型 ：keyword类型适用于索引结构化的字段，比如email地址、主机名、状态码和标签。如果字段需要进行过滤(比如查找已发布博客中status属性为published的文章)、排序、聚合。keyword类型的字段只能通过精确值搜索到</p>
+</li>
+<li><p>constant_keyword类型: 关键词的value永远都是相同的值</p>
+</li>
+<li><p>wildcard类型：该字段类型经过优化，可在字符串值中快速查找模式。这种新的字段类型采用了一种全新的方式来索引字符串数据，从而解决了在日志和安全性数据中高效索引和搜索的最佳实践。根据你现有的字段用法，通配符可以提供：</p>
+<ul>
+<li>更简单的搜索表达式（无需将 AND &#x2F;单词&#x2F;短语组合在一起）</li>
+<li>更简单的索引编制（无需定义分析器选择）</li>
+<li>不再有的缺失值</li>
+<li>更快的搜索</li>
+<li>更少的磁盘使用</li>
+<li>与 text 字段不同，它不会将字符串视为由标点符号分隔的单词的集合。</li>
+<li>与 keyword 字段不同，它可以快速地搜索许多唯一值，并且没有大小限制。</li>
+</ul>
+<p>新的 wildcard 字段使用以下两种数据结构以这种方式自动加速通配符和正则表达式搜索：</p>
+<ul>
+<li><p>字符串中所有3个字符序列的 n-gram” 索引，用于提供候选对象的快速但粗略的缩小</p>
+</li>
+<li><p>完整原始文档值的 “二进制 doc value” 存储，用于通过自动查询验证由 n-gram 语法匹配产生的匹配候选</p>
+</li>
+<li><p>性能比对<br><img src="/../../../images/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/ElasticSearch/keyword%E5%92%8Cwildcard%E6%80%A7%E8%83%BD%E6%AF%94%E5%AF%B9.JPG" alt="keyword和wildcard性能比对"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="3-布尔类型"><a href="#3-布尔类型" class="headerlink" title="3. 布尔类型"></a>3. 布尔类型</h6><p>逻辑类型（布尔类型）可以接受</p>
+<p>true&#x2F;false&#x2F;“true”&#x2F;“false”值</p>
+<h6 id="4-日期类型（Date）"><a href="#4-日期类型（Date）" class="headerlink" title="4. 日期类型（Date）"></a>4. 日期类型（Date）</h6><p>日期类型表示格式可以是以下几种：</p>
+<ol>
+<li>日期格式的字符串，比如 “2018-01-13” 或 “2018-01-13 12:10:30”</li>
+<li>long类型的毫秒数( milliseconds-since-the-epoch，epoch就是指UNIX诞生的UTC时间1970年1月1日0时0分0秒)</li>
+<li>integer的秒数(seconds-since-the-epoch)</li>
+</ol>
+<p>ElasticSearch 内部会将日期数据转换为UTC，并存储为milliseconds-since-the-epoch的long型整数。</p>
+<p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-date-format.html#strict-date-time">定义日期类型和日志格式</a></p>
+<p>示例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">PUT my_index</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mapping&quot;: &#123;</span><br><span class="line">    &quot;my_type&quot;: &#123;</span><br><span class="line">      &quot;properties&quot;: &#123;</span><br><span class="line">        &quot;date&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;date&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">PUT my_index/my_type/1</span><br><span class="line">&#123;&quot;date&quot;: &quot;2015-01-01&quot;&#125;</span><br><span class="line"></span><br><span class="line">PUT my_index/my_type/2</span><br><span class="line">&#123;&quot;date&quot;: &quot;2015-01-01T12:10:30Z&quot;&#125;</span><br><span class="line"></span><br><span class="line">PUT my_index/my_type/3</span><br><span class="line">&#123;&quot;date&quot;: 1420070400001&#125;</span><br><span class="line"></span><br><span class="line">GET my_index/_search</span><br><span class="line">&#123;</span><br><span class="line">  &quot;sort&quot;: &#123;&quot;date&quot;: &quot;asc&quot;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="5-二进制类型（binary）"><a href="#5-二进制类型（binary）" class="headerlink" title="5. 二进制类型（binary）"></a>5. 二进制类型（binary）</h6><p>二进制字段是指用base64来表示索引中存储的二进制数据，可用来存储二进制形式的数据，例如图像，默认情况下，该类型只存储不索引。二进制类型只支持index_name属性</p>
+<p>写入blob：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">PUT my_index</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mappings&quot;: &#123;</span><br><span class="line">    &quot;my_type&quot;: &#123;</span><br><span class="line">      &quot;properties&quot;: &#123;</span><br><span class="line">        &quot;name&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;text&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;blob&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;binary&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">PUT my_index/my_type/1</span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;Some binary blob&quot;</span><br><span class="line">  &quot;blob&quot;: &quot;U29tZSBiaW5hcnkgYmxvYg==&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>搜索blob字段：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET my_index/_search</span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123;</span><br><span class="line">    &quot;match&quot;: &#123;</span><br><span class="line">      &quot;blob&quot;: &quot;test&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="6-范围查询"><a href="#6-范围查询" class="headerlink" title="6. 范围查询"></a>6. 范围查询</h6><p>range类型支持以下几种：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>integer_range</td>
+<td>-2^31^至2^31^-1</td>
+</tr>
+<tr>
+<td>float_range</td>
+<td>32^-bit^ IEEE 754</td>
+</tr>
+<tr>
+<td>long_range</td>
+<td>-2^63^至2^63^-1</td>
+</tr>
+<tr>
+<td>double_range</td>
+<td>64^-64bit^ IEEE 754</td>
+</tr>
+<tr>
+<td>date_range</td>
+<td>64位整数，毫秒计时</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>range使用场景：比如前端的时间选择表单、年龄范围选择表单等</p>
+<p>例子：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">PUT range_index</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mappings&quot;: &#123;</span><br><span class="line">    &quot;my_type&quot;: &#123;</span><br><span class="line">      &quot;properties&quot;: &#123;</span><br><span class="line">        &quot;expected_attendees&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;integer_range&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;time_frame&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;date_range&quot;, </span><br><span class="line">          &quot;format&quot;: &quot;yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">PUT range_index/my_type/1</span><br><span class="line">&#123;</span><br><span class="line">  &quot;expected_attendees&quot; : &#123; </span><br><span class="line">    &quot;gte&quot; : 10,</span><br><span class="line">    &quot;lte&quot; : 20</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;time_frame&quot; : &#123; </span><br><span class="line">    &quot;gte&quot; : &quot;2015-10-31 12:00:00&quot;, </span><br><span class="line">    &quot;lte&quot; : &quot;2015-11-01&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码创建了一个range_index索引，expected_attendees的人数为10到20，时间是2015-10-31 12:00:00至2015-11-01</p>
+<p>查询语句：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">POST range_index/_search</span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123;</span><br><span class="line">    &quot;range&quot;: &#123;</span><br><span class="line">      &quot;time_frame&quot;: &#123;</span><br><span class="line">        &quot;gte&quot;: &quot;2015-08-01&quot;,</span><br><span class="line">        &quot;lte&quot;: &quot;2015-12-01&quot;,</span><br><span class="line">        &quot;relation&quot;: &quot;within&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>查询结果：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;took&quot;:2,</span><br><span class="line">  &quot;time_out&quot;:false,</span><br><span class="line">  &quot;_shards&quot;:&#123;</span><br><span class="line">    &quot;total&quot;:5,</span><br><span class="line">    &quot;successful&quot;:5,</span><br><span class="line">    &quot;failed&quot;:0</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;hits&quot;:&#123;</span><br><span class="line">    &quot;total&quot;:1,</span><br><span class="line">    &quot;max_score&quot;:1,</span><br><span class="line">    &quot;hits&quot;:[</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;_index&quot;:&quot;range_index&quot;,</span><br><span class="line">        &quot;_type&quot;:&quot;my_type&quot;,</span><br><span class="line">        &quot;_id&quot;:&quot;1&quot;,</span><br><span class="line">        &quot;_score&quot;:1,</span><br><span class="line">        &quot;_source&quot;:&#123;</span><br><span class="line">          &quot;expected_attendees&quot;:&#123;</span><br><span class="line">            &quot;gte&quot;:10,</span><br><span class="line">            &quot;lte&quot;:20</span><br><span class="line">          &#125;,</span><br><span class="line">          &quot;time_frame&quot;:&#123;</span><br><span class="line">            &quot;gte&quot;:&quot;2015-10-31 12:00:00&quot;,</span><br><span class="line">            &quot;lte&quot;:&quot;2015-11-01&quot;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="7-数据类型（array）"><a href="#7-数据类型（array）" class="headerlink" title="7. 数据类型（array）"></a>7. 数据类型（array）</h6><p>ElasticSearch没有专用的数组类型，默认情况下任何字段都可以包含一个或者多个值，但是<strong>一个数组中的值必须是同一个类型</strong>，例如：</p>
+<ol>
+<li>字符数组：<code>[&quot;one&quot;,&quot;two&quot;]</code></li>
+<li>整型数据：<code>[1,3]</code></li>
+<li>嵌套数组：<code>[1,[2,3]]</code>，等价于<code>[1,2,3]</code></li>
+<li>对象数据：<code>[&#123;&quot;name&quot;:&quot;Mary&quot;, &quot;age&quot;:12&#125;,&#123;&quot;name&quot;:&quot;John&quot;,&quot;age&quot;:10&#125;]</code></li>
+</ol>
+<p><strong>ES对于多个值的字段会自动推断成数组类型（整型数组、字符串数组），无需用户进行显示定义（仅需要显示定义数组的元素类型）</strong></p>
+<p>注意事项：</p>
+<ul>
+<li>动态添加数据时，数组的第一个值的类型决定了整个数组的类型</li>
+<li><strong>混合数组的类型是不支持的</strong>，比如：[1,”abc”]</li>
+<li><strong>数组可以包含null值，空数组[]会被当做missing field对待</strong></li>
+</ul>
+<h6 id="8-ip"><a href="#8-ip" class="headerlink" title="8. ip"></a>8. ip</h6><p>ip类型的字段用于存储IPV4或者IPV6的地址</p>
+<p>例子：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">PUT my_index</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mappings&quot;: &#123;</span><br><span class="line">    &quot;my_type&quot;: &#123;</span><br><span class="line">      &quot;properties&quot;: &#123;</span><br><span class="line">        &quot;ip_addr&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;ip&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">PUT my_index/my_type/1</span><br><span class="line">&#123;</span><br><span class="line">  &quot;ip_addr&quot;: &quot;192.168.1.1&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">GET my_index/_search</span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123;</span><br><span class="line">    &quot;term&quot;: &#123;</span><br><span class="line">      &quot;ip_addr&quot;: &quot;192.168.1.1&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="9-嵌套类型（nested）"><a href="#9-嵌套类型（nested）" class="headerlink" title="9. 嵌套类型（nested）"></a>9. 嵌套类型（nested）</h6><p><strong>nested嵌套类型是object中的一个特例，可以让array类型的Object独立索引和查询，使用Object类型有时会出现问题</strong></p>
+<p>例子：</p>
+<p>比如文档my_index&#x2F;my_type&#x2F;1的结构中，user字段会被动态添加为Object类型：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">PUT my_index/my_type/1</span><br><span class="line">&#123;</span><br><span class="line">  &quot;group&quot;: &quot;fans&quot;,</span><br><span class="line">  &quot;user&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;first&quot;: &quot;John&quot;,</span><br><span class="line">      &quot;last&quot;: &quot;Smith&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;first&quot;: &quot;Alice&quot;,</span><br><span class="line">      &quot;last&quot;: &quot;White&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者索引的已存在user字段的配置会被转化为以下的平整形式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">PUT my_index</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mappings&quot;: &#123;</span><br><span class="line">    &quot;properties&quot;: &#123;</span><br><span class="line">      &quot;user&quot;: &#123;</span><br><span class="line">        &quot;type&quot;: &quot;object&quot;,</span><br><span class="line">        &quot;properties&quot;: &#123;</span><br><span class="line">          &quot;first&quot;: &#123;</span><br><span class="line">            &quot;type&quot;: &quot;text&quot;</span><br><span class="line">          &#125;,</span><br><span class="line">          &quot;last&quot;: &#123;</span><br><span class="line">            &quot;type&quot;: &quot;text&quot;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;group&quot;: &quot;fans&quot;,</span><br><span class="line">  &quot;user.first&quot;: [&quot;alice&quot;, &quot;john&quot;],</span><br><span class="line">  &quot;user.last&quot;: [&quot;smith&quot;, &quot;white&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>user.first和user.last会被平铺为多值字段，Alice和Smith之间的关联关系会消失，上面的文档不正确地匹配（虽然能搜索到，实际上不存在Alice Smith）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">GET my_index/_search</span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123;</span><br><span class="line">    &quot;bool&quot;: &#123;</span><br><span class="line">      &quot;must&quot;: [</span><br><span class="line">        &#123;&quot;match&quot;: &#123;&quot;user.first&quot;: &quot;Alice&quot;&#125;&#125;,</span><br><span class="line">        &#123;&quot;match&quot;: &#123;&quot;user.last&quot;: &quot;Smith&quot;&#125;&#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用nested字段类型解决Object类型的不足：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">PUT my_index</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mappings&quot;: &#123;</span><br><span class="line">    &quot;my_type&quot;: &#123;</span><br><span class="line">      &quot;properties&quot;: &#123;</span><br><span class="line">        &quot;user&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;nested&quot;,</span><br><span class="line">          &quot;properties&quot;: &#123;</span><br><span class="line">            &quot;first&quot;: &#123;</span><br><span class="line">              &quot;type&quot;: &quot;text&quot;</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;last&quot;: &#123;</span><br><span class="line">              &quot;type&quot;: &quot;text&quot;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">PUT my_index/my_type/1</span><br><span class="line">&#123;</span><br><span class="line">  &quot;group&quot;: &quot;fans&quot;,</span><br><span class="line">  &quot;user&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;first&quot;: &quot;John&quot;,</span><br><span class="line">      &quot;last&quot;: &quot;Smith&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;first&quot;: &quot;Alice&quot;,</span><br><span class="line">      &quot;last&quot;: &quot;White&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">GET my_index/_search</span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123;</span><br><span class="line">    &quot;nested&quot;: &#123;</span><br><span class="line">      &quot;path&quot;: &quot;user&quot;,</span><br><span class="line">      &quot;query&quot;: &#123;</span><br><span class="line">        &quot;bool&quot;: &#123;</span><br><span class="line">          &quot;must&quot;: [</span><br><span class="line">            &#123; &quot;match&quot;: &#123; &quot;user.first&quot;: &quot;Alice&quot; &#125;&#125;,</span><br><span class="line">            &#123; &quot;match&quot;: &#123;&quot;user.last&quot;: &quot;Smith&quot; &#125;&#125;</span><br><span class="line">          ]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">GET my_index/_search</span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123;</span><br><span class="line">    &quot;nested&quot;: &#123;</span><br><span class="line">      &quot;path&quot;: &quot;user&quot;,</span><br><span class="line">      &quot;query&quot;: &#123;</span><br><span class="line">        &quot;bool&quot;: &#123;</span><br><span class="line">          &quot;must&quot;: [</span><br><span class="line">            &#123; &quot;match&quot;: &#123; &quot;user.first&quot;: Alice &#125;&#125;,</span><br><span class="line">            &#123; &quot;match&quot;: &#123; &quot;user.last&quot;: &quot;White&quot; &#125;&#125;</span><br><span class="line">          ]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;inner_hits&quot;: &#123;</span><br><span class="line">        &quot;highlight&quot;: &#123;</span><br><span class="line">          &quot;fields&quot;: &#123;</span><br><span class="line">            &quot;user.first&quot;: &#123;&#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="10-空间数据类型（geo-point-geo-shape）"><a href="#10-空间数据类型（geo-point-geo-shape）" class="headerlink" title="10. 空间数据类型（geo_point&#x2F;geo_shape）"></a>10. 空间数据类型（geo_point&#x2F;geo_shape）</h6><p>地理位置信息类型用于存储地理位置的经纬度，也可以存储其他的形状信息</p>
+<ul>
+<li><p>点类型（geo_point）<br>地理坐标的一个点，只支持WGS84坐标系，坐标范围Lat范围为 [-90, 90]，Lon为 [-180, 180]</p>
+<p>geo_point示例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">PUT my_index</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mappings&quot;: &#123;</span><br><span class="line">    &quot;my_type&quot;: &#123;</span><br><span class="line">      &quot;properties&quot;: &#123;</span><br><span class="line">        &quot;location&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;geo_point&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">PUT my_index/my_type/1</span><br><span class="line">&#123;</span><br><span class="line">  &quot;text&quot;: &quot;Geo-point as an object&quot;,</span><br><span class="line">  &quot;location&quot;: &#123;</span><br><span class="line">    &quot;lat&quot;: 41.12,</span><br><span class="line">    &quot;lon&quot;: -71.34</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">PUT my_index/my_type/2</span><br><span class="line">&#123;</span><br><span class="line">  &quot;text&quot;: &quot;Geo-point as an string&quot;,</span><br><span class="line">  &quot;location&quot;: &quot;41.12,-71.34&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">PUT my_index/my_type/3</span><br><span class="line">&#123;</span><br><span class="line">  &quot;text&quot;: &quot;Geo-point as an geohash&quot;,</span><br><span class="line">  &quot;location&quot;: &quot;drm3btev3e86&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">PUT my_index/my_type/4</span><br><span class="line">&#123;</span><br><span class="line">  &quot;text&quot;: &quot;Geo-point as an array&quot;,</span><br><span class="line">  &quot;location&quot;: [ -71.34, 41.12 ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">GET my_index/_search</span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123;</span><br><span class="line">    &quot;geo_bounding_box&quot;: &#123;</span><br><span class="line">      &quot;location&quot;: &#123;</span><br><span class="line">        &quot;top_left&quot;: &#123;</span><br><span class="line">          &quot;lat&quot;: 42,</span><br><span class="line">          &quot;lon&quot;: -72</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;bottom_right&quot;: &#123;</span><br><span class="line">          &quot;lat&quot;: 40,</span><br><span class="line">          &quot;lon&quot;: -74</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>形状类型（geo_shape）：复杂形状，例如多边形</p>
+</li>
+<li><p>point类型：支持点、线、面、多面、范围等几何要素，可以对现实世界建立二维平面模型。支持与指定图形相交、包含或者不相交等图形检索</p>
+</li>
+<li><p>shape类型：用于表示任意的笛卡尔坐标的几何图形，也就是直角坐标系下的几何坐标，不支持multipoint类型，以及包含关系（CONTAINS）的检索</p>
+</li>
+</ul>
+<h6 id="11-文本类型"><a href="#11-文本类型" class="headerlink" title="11. 文本类型"></a>11. 文本类型</h6><ul>
+<li><strong>text类型</strong>：当一个字段是要被全文检索被分词的字段，比如Email内容、产品描述，应该使用text类型。设置text类型以后，字段内容会被分词，在生成倒排索引以前，字符串会被分析器分成一个一个词项。<strong>text类型的字段不能用于排序，坚决不能用于聚合</strong></li>
+<li>annotated-text类型：实验性的类型，后续可能会被废弃，需要插件（mapper-annotated-text）支持</li>
+<li>token_count类型：底层实际是integer类型，可以接收string数据，然后被分词分析，然后将分词后的个数写入倒排索引中</li>
+<li>completion类型：自动完成Sug的数据类型</li>
+<li>search_as_you_type类型：输入及搜索类型，类似于like的text版本</li>
+</ul>
+<h6 id="12-文档排序类型（vector）"><a href="#12-文档排序类型（vector）" class="headerlink" title="12. 文档排序类型（vector）"></a>12. 文档排序类型（vector）</h6><ul>
+<li>dense_vector：存储密集型浮点型向量</li>
+<li>sparse_vector：存储稀疏型浮点型向量</li>
+<li>rank_feature：一个数字特征用于在查询时提高查询权重，该字段不能用于倒排、排序和聚合，仅用于rank feature query，不能为负值</li>
+<li>rank_features：一个数字特征用于在查询时提高查询权重，该字段不能用于倒排、排序和聚合，仅用于rank feature query，不能为负值</li>
+</ul>
+<h6 id="13-其他类型"><a href="#13-其他类型" class="headerlink" title="13.其他类型"></a>13.其他类型</h6><p>ES7.x中新增了其他的类型，如下所述：</p>
+<ul>
+<li>alias：并不实际存在，而是对已有的字段进行映射，搜索该字段与搜索实际字段返回的内容没有本质区别</li>
+<li>date_nanos：另一种时间类型，可精确到秒，用法类似于date</li>
+<li>features：用于存储特征向量，数据不能为0和负数，查询时只能使用rank feature query，该字段主要为支持后续机器学习相关功能准备</li>
+<li>vector：存储特征数组，支持稀疏和稠密向量存储，该字段主要为支持后续机器学习相关功能准备</li>
+<li>percolator：渗透查询，用于存储业务的Query</li>
+</ul>
+<h5 id="3-2-字段属性"><a href="#3-2-字段属性" class="headerlink" title="3.2 字段属性"></a>3.2 字段属性</h5><h6 id="1-analyzer"><a href="#1-analyzer" class="headerlink" title="1.analyzer"></a>1.analyzer</h6><p>通过”analyzer”参数指定分词器，默认对写入和查询都有效，不指定默认分词器为standard分词器，也可以通过”search_analyzer”的介绍</p>
+<p>如下，通过artsnlp分词系统的配置：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">PUT my_index</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mappings&quot;: &#123;</span><br><span class="line">    &quot;my_type&quot;: &#123;</span><br><span class="line">      &quot;properties&quot;: &#123;</span><br><span class="line">        &quot;content&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;text&quot;,</span><br><span class="line">          &quot;analyzer&quot;: &quot;antsnlp&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-normalizer"><a href="#2-normalizer" class="headerlink" title="2.normalizer"></a>2.normalizer</h6><p>normalizer用于解析前的标准化配置，比如把所有的字符转化为小写等，常用于不区分大小写模糊匹配查询，例子：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">PUT index</span><br><span class="line">&#123;</span><br><span class="line">  &quot;setttings&quot;: &#123;</span><br><span class="line">    &quot;analysis&quot;: &#123;</span><br><span class="line">      &quot;normalizer&quot;: &#123;</span><br><span class="line">        &quot;my_normalizer&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;custom&quot;,</span><br><span class="line">          &quot;char_filter&quot;: [],</span><br><span class="line">          &quot;filter&quot;: [&quot;lowercase&quot;, &quot;asciifolding&quot;]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;mappings&quot;: &#123;</span><br><span class="line">    &quot;type&quot;: &#123;</span><br><span class="line">      &quot;properties&quot;: &#123;</span><br><span class="line">        &quot;foo&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;keyword&quot;,</span><br><span class="line">          &quot;normalizer&quot;: &quot;my_normalizer&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">PUT index/type/1</span><br><span class="line">&#123;</span><br><span class="line">  &quot;foo&quot;: &quot;BAR&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">PUT index/type/2</span><br><span class="line">&#123;</span><br><span class="line">  &quot;food&quot;: &quot;bar&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">PUT index/type/3</span><br><span class="line">&#123;</span><br><span class="line">  &quot;foo&quot;: &quot;baz&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">GET index/_search</span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123;</span><br><span class="line">    &quot;match&quot;: &#123;</span><br><span class="line">      &quot;foo&quot;: &quot;BAR&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>BAR经过normalizer过滤以后转化为bar，文档1和文档2会被搜索到</p>
+<h6 id="3-boost"><a href="#3-boost" class="headerlink" title="3.boost"></a>3.boost</h6><p>boost字段用于设置字段的权重，默认权重是1，<strong>可以设置ES的mappings中设置字段权重，或者在查询语句中设置字段权重</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">PUT my_index</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mappings&quot;: &#123;</span><br><span class="line">    &quot;my_type&quot;: &#123;</span><br><span class="line">      &quot;properties&quot;: &#123;</span><br><span class="line">        &quot;title&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;text&quot;,</span><br><span class="line">          &quot;boost&quot;: 2</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;content&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;text&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>同时，在查询语句中也可以指定权重</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">POST _search</span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123;</span><br><span class="line">    &quot;match&quot;: &#123;</span><br><span class="line">      &quot;title&quot;: &#123;</span><br><span class="line">        &quot;query&quot;: &quot;quick brown fox&quot;,</span><br><span class="line">        &quot;boost&quot;: 2</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>推荐在查询时指定boost，第一种在mapping中写死，如果不重新构建索引，权重无法修改，第二种可以实现相同功能，同时更加灵活</p>
+<h6 id="4-coerce"><a href="#4-coerce" class="headerlink" title="4.coerce"></a>4.coerce</h6><p>coerce属性用于清楚脏数据，coerce的默认值是true</p>
+<ul>
+<li>字符串会被强制转化为整数，5 -&gt; “5”</li>
+<li>浮点数会被强制转化为整数，5 -&gt; 5.0</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">PUT my_index</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mappings&quot;: &#123;</span><br><span class="line">    &quot;my_type&quot;: &#123;</span><br><span class="line">      &quot;properties&quot;: &#123;</span><br><span class="line">        &quot;number_one&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;integer&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;number_two&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;integer&quot;,</span><br><span class="line">          &quot;coerce&quot;: false</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="5-copy-to"><a href="#5-copy-to" class="headerlink" title="5.copy_to"></a>5.copy_to</h6><p>copy_to属性用于配置自定义的_all字段，换言之就是多个字段可以合并成一个超级字段。比如first_name和last_name可以合并为full_name</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">PUT my_index</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mappings&quot;: &#123;</span><br><span class="line">    &quot;my_type&quot;: &#123;</span><br><span class="line">      &quot;properties&quot;: &#123;</span><br><span class="line">        &quot;first_name&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;text&quot;,</span><br><span class="line">          &quot;copy_to&quot;: &quot;full_name&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;last_name&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;text&quot;,</span><br><span class="line">          &quot;copy_to&quot;: &quot;full_name&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;full_name&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;text&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">PUT my_index/my_type/1</span><br><span class="line">&#123;</span><br><span class="line">  &quot;first_name&quot;: &quot;John&quot;,</span><br><span class="line">  &quot;last_name&quot;: &quot;Smith&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">GET my_index/_search</span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123;</span><br><span class="line">    &quot;match&quot;: &#123;</span><br><span class="line">      &quot;full_name&quot;: &#123;</span><br><span class="line">        &quot;query&quot;: &quot;John Smith&quot;,</span><br><span class="line">        &quot;operator&quot;: &quot;and&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="6-doc-values"><a href="#6-doc-values" class="headerlink" title="6.doc_values"></a>6.doc_values</h6><p>doc_values是为了加快排序、聚合操作，在建立倒排索引的时候，额外增加一个列式存储映射，是一个空间换时间的做法。默认是开启的，对于确定不需要聚合或者排序的字段可以关闭</p>
+<p>WARNING：text类型不支持doc_value</p>
+<h6 id="7-dynamic"><a href="#7-dynamic" class="headerlink" title="7.dynamic"></a>7.dynamic</h6><p>dynamic属性用于检测新发现的字段，有三个取值：</p>
+<ul>
+<li>true:新发现的字段添加到映射中。（默认）</li>
+<li>flase:新检测的字段被忽略。必须显式添加新字段。</li>
+<li>strict:如果检测到新字段，就会引发异常并拒绝文档。</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">PUT my_index</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mappings&quot;: &#123;</span><br><span class="line">    &quot;my_type&quot;: &#123;</span><br><span class="line">      &quot;dynamic&quot;: false,</span><br><span class="line">      &quot;properties&quot;: &#123;</span><br><span class="line">        &quot;user&quot;: &#123;</span><br><span class="line">          &quot;properties&quot;: &#123;</span><br><span class="line">            &quot;name&quot;: &#123;</span><br><span class="line">              &quot;type&quot;: &quot;text&quot;</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;social_networks&quot;: &#123;</span><br><span class="line">              &quot;dynamic&quot;: true,</span><br><span class="line">              &quot;properties&quot;: &#123;&#125;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>取值为strict，非布尔值要加引号</p>
+<h6 id="8-enabled"><a href="#8-enabled" class="headerlink" title="8.enabled"></a>8.enabled</h6><p>Elasticseaech默认会索引所有的字段，enabled设为false的字段，es会跳过字段内容，该字段只能从_source中获取，但是不可搜。而且字段可以是任意类型</p>
+<h6 id="9-fielddata"><a href="#9-fielddata" class="headerlink" title="9.fielddata"></a>9.fielddata</h6><p>搜索要解决的问题是“包含查询关键词的文档有哪些？”，聚合恰恰相反，聚合要解决的问题是“文档包含哪些词项”，大多数字段再索引时生成doc_values，但是text字段不支持doc_values。</p>
+<p>取而代之，text字段在查询时会生成一个fielddata的数据结构，fielddata在字段首次被聚合、排序、或者使用脚本的时候生成。ELasticsearch通过读取磁盘上的倒排记录表重新生成文档词项关系，最后在Java堆内存中排序。</p>
+<p>text字段的fielddata属性默认是关闭的，开启fielddata非常消耗内存。在你开启text字段以前，想清楚为什么要在text类型的字段上做聚合、排序操作。大多数情况下这么做是没有意义的。</p>
+<p>“New York”会被分析成“new”和“york”，在text类型上聚合会分成“new”和“york”2个桶，也许你需要的是一个“New York”。这是可以加一个不分析的keyword字段：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">PUT my_index</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mappings&quot;: &#123;</span><br><span class="line">    &quot;my_type&quot;: &#123;</span><br><span class="line">      &quot;properties&quot;: &#123;</span><br><span class="line">        &quot;my_field&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;text&quot;,</span><br><span class="line">          &quot;fields&quot;: &#123;</span><br><span class="line">            &quot;keyword&quot;: &#123;</span><br><span class="line">              &quot;type&quot;: &quot;keyword&quot;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的mapping中实现了通过my_field字段做全文搜索，my_field.keyword做聚合、排序和使用脚本</p>
+<h6 id="10-format"><a href="#10-format" class="headerlink" title="10.format"></a>10.format</h6><p>format属性主要用于格式化日期：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">PUT my_index</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mappings&quot;: &#123;</span><br><span class="line">    &quot;my_type&quot;: &#123;</span><br><span class="line">      &quot;properties&quot;: &#123;</span><br><span class="line">        &quot;date&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;date&quot;,</span><br><span class="line">          &quot;format&quot;: &quot;yyyy-MM-dd&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-date-format.html">更多内置的日期格式</a></p>
+<h6 id="11-ignore-above"><a href="#11-ignore-above" class="headerlink" title="11.ignore_above"></a>11.ignore_above</h6><p>ignore_above用于指定字段索引和存储的长度最大值，超过最大值的会被忽略：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">PUT my_index</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mappings&quot;: &#123;</span><br><span class="line">    &quot;my_type&quot;: &#123;</span><br><span class="line">      &quot;properties&quot;: &#123;</span><br><span class="line">        &quot;message&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;keyword&quot;,</span><br><span class="line">          &quot;ignore_above&quot;: 15</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">PUT my_index/my_type/1</span><br><span class="line">&#123;</span><br><span class="line">  &quot;message&quot;: &quot;Syntax error&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">PUT my_index/my_type/2</span><br><span class="line">&#123;</span><br><span class="line">  &quot;message&quot;: &quot;Syntax error with some long stacktrace&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>mapping中指定了ignore_above字段的最大长度为15，第一个文档的字段长小于15，因此索引成功，第二个超过15，因此不索引，返回结果只有”Syntax error”</p>
+<h6 id="12-ignore-malformed"><a href="#12-ignore-malformed" class="headerlink" title="12.ignore_malformed"></a>12.ignore_malformed</h6><p>ignore_malformed可以忽略不规则数据，对于login字段，有人可能填写的是date类型，也有人填写的是邮件格式。给一个字段索引不合适的数据类型发生异常，导致整个文档索引失败。如果ignore_malformed参数设为true，异常会被忽略，出异常的字段不会被索引，其它字段正常索引。</p>
+<h6 id="13-index"><a href="#13-index" class="headerlink" title="13.index"></a>13.index</h6><p>index属性指定字段是否索引，不索引也就不可搜索，取值可以为true或者false。</p>
+<h6 id="14-index-options"><a href="#14-index-options" class="headerlink" title="14.index_options"></a>14.index_options</h6><p>index_options控制索引时存储哪些信息到倒排索引中，接受以下配置：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>docs</td>
+<td>只存储文档编号</td>
+</tr>
+<tr>
+<td>freqs</td>
+<td>存储文档编号和词项频率</td>
+</tr>
+<tr>
+<td>positions</td>
+<td>文档编号、词项频率、词项的位置被存储，偏移位置可用于临近搜索和短语查询</td>
+</tr>
+<tr>
+<td>offsets</td>
+<td>文档编号、词项频率、词项爱你给到位置、词项开始和结束的字符位置被存储，offsets设为true会使用 Postings highlighter</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h6 id="15-fields"><a href="#15-fields" class="headerlink" title="15.fields"></a>15.fields</h6><p>fields可以让同一文本有多种不同的索引方式，比如一个String类型的字段，可以使用text类型做全文检索，使用keyword类型做聚合和排序。</p>
+<h6 id="16-norms"><a href="#16-norms" class="headerlink" title="16.norms"></a>16.norms</h6><p>norms参数用于标准化文档，以便查询时计算文档的相关性。norms虽然对评分有用，但是会消耗较多的磁盘空间，如果不需要对某个字段进行评分，最好不要开启norms。</p>
+<h6 id="17-null-value"><a href="#17-null-value" class="headerlink" title="17.null_value"></a>17.null_value</h6><p>值为null的字段不索引也不可以搜索，null_value参数可以让值为null的字段显式的可索引、可搜索</p>
+<h6 id="18-position-increment-gap"><a href="#18-position-increment-gap" class="headerlink" title="18.position_increment_gap"></a>18.position_increment_gap</h6><p>为了支持近似或者短语查询，text字段被解析的时候会考虑此项的位置信息。</p>
+<h6 id="19-properties"><a href="#19-properties" class="headerlink" title="19.properties"></a>19.properties</h6><p>Object或者nested类型，下面还有嵌套类型，可以通过properties参数指定。</p>
+<h6 id="20-search-analyzer"><a href="#20-search-analyzer" class="headerlink" title="20. search_analyzer"></a>20. search_analyzer</h6><p>大多数情况下索引和搜索的时候应该指定相同的分析器，确保query解析以后和索引中的词项一致。但是有时候也需要指定不同的分析器，例如使用edge_ngram过滤器实现自动补全。</p>
+<p>默认情况下查询会使用analyzer属性指定的分析器，但也可以被search_analyzer覆盖。</p>
+<h6 id="21-similarity"><a href="#21-similarity" class="headerlink" title="21.similarity"></a>21.similarity</h6><p>similarity参数用于指定文档评分模型，参数有三个：</p>
+<ul>
+<li>BM25 ：ES和Lucene默认的评分模型</li>
+<li>classic ：TF&#x2F;IDF评分</li>
+<li>boolean：布尔模型评分</li>
+</ul>
+<p>22.store</p>
+<p>默认情况下，自动是被索引的也可以搜索，但是不存储，这也没关系，因为_source字段里面保存了一份原始文档。在某些情况下，store参数有意义，比如一个文档里面有title、date和超大的content字段，如果只想获取title和date，可以这样：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">PUT my_index</span><br><span class="line">&#123;</span><br><span class="line">  &quot;mappings&quot;: &#123;</span><br><span class="line">    &quot;my_type&quot;: &#123;</span><br><span class="line">      &quot;properties&quot;: &#123;</span><br><span class="line">        &quot;title&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;text&quot;,</span><br><span class="line">          &quot;store&quot;: true</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;date&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;date&quot;,</span><br><span class="line">          &quot;store&quot;: true</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;content&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;text&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">PUT my_index/my_type/1</span><br><span class="line">&#123;</span><br><span class="line">  &quot;title&quot;: &quot;Some short title&quot;,</span><br><span class="line">  &quot;date&quot;: &quot;2015-01-01&quot;,</span><br><span class="line">  &quot;content&quot;: &quot;A very long content field...&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">GET my_index/_search</span><br><span class="line">&#123;</span><br><span class="line">  &quot;store_fields&quot;: [ &quot;title&quot;, &quot;date&quot; ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Store fields返回的总是数组，如果想返回原始字段，还是要从_source中取</p>
+<h6 id="23-term-vector"><a href="#23-term-vector" class="headerlink" title="23.term_vector"></a>23.term_vector</h6><p>词向量包含了文本被解析以后的以下信息：</p>
+<ul>
+<li>词项集合</li>
+<li>词项位置</li>
+<li>词项的起始字符映射到原始文档中的位置</li>
+</ul>
+<h6 id="24-docvalues"><a href="#24-docvalues" class="headerlink" title="24. docvalues"></a>24. docvalues</h6><p>docvalues默认对所有字段开启，除了text类型，其取值为true，false，如果该字段需要用于聚合查询、排序中，那么设置为true，会大幅度提升性能，另外docvalues是通过mmap方式加载，如果大量的使用，也会造成系统大量缺页，出现很多内存page的换入换出，造成系统性能下降，因此如果没有必要做排序和聚合，可以关闭该属性。</p>
+<h3 id="索引配置（Settings）介绍"><a href="#索引配置（Settings）介绍" class="headerlink" title="索引配置（Settings）介绍"></a>索引配置（Settings）介绍</h3><p>索引的setting分为静态和动态两种。静态的只能在索引创建或关闭时设置；动态的则可以使用update-index-settings API来实时设置。</p>
+<p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/index-modules.html">索引配置Settings文档</a></p>
+<h3 id="索引别名（alias）"><a href="#索引别名（alias）" class="headerlink" title="索引别名（alias）"></a>索引别名（alias）</h3><p>索引别名可以关联一个或多个物理索引，在查询时，指定查询目标为别名，在集群侧会将别名自动转化为对应改单物理索引，从而达到一次性查询多个索引的目标。</p>
+<p>也可以通过修改别名的物理索引，实现不改变客户端查询配置情况下切换物理索引的效果</p>
+
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2024/10/05/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/ElasticSearch/02.ES%E5%9F%BA%E7%A1%80%E6%9F%A5%E8%AF%A2/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  02.ES基础查询
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2024/10/04/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/ElasticSearch/03.ES%E6%9E%B6%E6%9E%84/">
+                02.ES分布式搜索架构
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+
+<script>
+	
+	
+</script>
+
+	</div>
+	<div id="footer">
+	<p>
+	©<span id="footerYear-start"></span>-<span id="footerYear-end"></span>
+
+	
+	    <a href="/">Lightning</a>
+	
+	
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//wujun.me" target="_blank">Wu Jun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+
+
+<script type="text/javascript">
+	document.getElementById('footerYear-start').innerHTML = new Date().getFullYear() + '';
+</script>
+
+<script type="text/javascript">
+	document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';
+</script>
+
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
