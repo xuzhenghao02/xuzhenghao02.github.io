@@ -215,17 +215,6 @@
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-							<ul>
-								<li class="file">
-									<a href="/2024/09/21/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/ElasticSearch/%E5%9F%BA%E7%A1%80%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%9F%A5%E8%AF%A2/">
-                     
-										    基本接口和查询
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
-							</ul>
-			
 								</li>
 								
 							</ul>
@@ -314,7 +303,22 @@
 					02.ES基础查询
 				</h2>
 				<div class="index-brief">
-					
+					基本类型与支持的查询方式
+
+
+字段类型
+描述
+查询方式
+
+
+
+Text
+存储文档数据。写入时对写入值进行分词，然后一一插入倒排索引
+match、match_phrase、multi_match、common_term、query_string
+
+
+Keyword
+存储关键字数据（整个字段查询）。写入
 					...
 				</div>
 			</a>
@@ -397,57 +401,6 @@ aliases：索引别名配置；这两部分的内容一旦设置好后，部分�
 			</a>
                 <div class="article-meta">
 				    <span>2024-10-04</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/基础积累/">基础积累</a>
-										
-											>
-										
-                                    </span>
-                                
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/基础积累/ElasticSearch/">ElasticSearch</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2024/09/21/%E5%9F%BA%E7%A1%80%E7%A7%AF%E7%B4%AF/ElasticSearch/%E5%9F%BA%E7%A1%80%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%9F%A5%E8%AF%A2/">
-				<h2 class="index-title">
-					基本接口和查询
-				</h2>
-				<div class="index-brief">
-					参考文档
-ElasticSearch权威指南
-字段term、keyword分别使用term和match查询的效果
-ES的Query、Filter、Metric和Bucketing使用详解
-
-Restful API 接口
-
-
-方法
-url
-描述
-
-
-
-PUT（创建，修改）
-localhost:9200
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2024-09-21</span>
                     
                             
                                 
